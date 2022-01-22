@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public abstract class InteractableController : MonoBehaviour
+public abstract class InteractableController : MonoBehaviour, IPointerDownHandler
 {
+    public CarController car;
 
     // Start is called before the first frame update
     void Start()
@@ -14,15 +16,12 @@ public abstract class InteractableController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        {
-            OnEBreakClick();
 
-        }
     }
 
-    void OnEBreakClick()
-    {
 
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        throw new System.NotImplementedException();
     }
 }
