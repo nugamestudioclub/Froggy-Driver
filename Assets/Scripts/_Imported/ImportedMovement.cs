@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class Movement : MonoBehaviour {
+public class ImportedMovement : MonoBehaviour {
 	private Vector2 direction;
 
 	[SerializeField]
@@ -20,15 +20,15 @@ public class Movement : MonoBehaviour {
 	}
 
 	private void OnEnable() {
-		PlayerInput.Moving += PlayerInput_Move;
+		ImportedPlayerInput.Moving += PlayerInput_Move;
 	}
 
 	private void OnDisable() {
-		PlayerInput.Moving -= PlayerInput_Move;
+		ImportedPlayerInput.Moving -= PlayerInput_Move;
 	}
 
 	private void Update() {
-		if( Input.GetKeyDown(KeyCode.Space) ) {
+		if( PlayerInput.GetKeyDown(KeyCode.Space) ) {
 			StartCoroutine(Jump(0.5f));
 			Debug.Log("jump");
 		}
@@ -38,7 +38,7 @@ public class Movement : MonoBehaviour {
 		body.velocity = direction * moveSpeed;
 	}
 
-	private void PlayerInput_Move(object sender, PlayerInput.MovingEventArgs e) {
+	private void PlayerInput_Move(object sender, ImportedPlayerInput.ImportedMovingEventArgs e) {
 		direction = e.Direction;
 	}
 

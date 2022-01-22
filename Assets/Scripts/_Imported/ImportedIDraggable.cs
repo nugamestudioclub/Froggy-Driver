@@ -1,7 +1,7 @@
 ﻿using UnityEngine.EventSystems;
 
 namespace Pazaak.Unity {
-	public interface IDraggable {
+	public interface ImportedIDraggable {
 		bool IsAllowed(PointerEventData eventData);
 	}
 }

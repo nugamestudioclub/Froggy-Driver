@@ -1,22 +1,22 @@
 ﻿using UnityEngine;
 
-public class Animation : MonoBehaviour {
+public class ImportedAnimation : MonoBehaviour {
 	private Animator animator;
 	private void Awake() {
 		animator = GetComponent<Animator>();
 	}
 
 	private void OnEnable() {
-		PlayerInput.Moving += PlayerInput_Move;
-		PlayerInput.Facing += PlayerInput_Face;
+		ImportedPlayerInput.Moving += PlayerInput_Move;
+		ImportedPlayerInput.Facing += PlayerInput_Face;
 	}
 
 	private void OnDisable() {
-		PlayerInput.Moving -= PlayerInput_Move;
-		PlayerInput.Facing -= PlayerInput_Face;
+		ImportedPlayerInput.Moving -= PlayerInput_Move;
+		ImportedPlayerInput.Facing -= PlayerInput_Face;
 	}
 
-	private void PlayerInput_Move(object sender, PlayerInput.MovingEventArgs e) {
+	private void PlayerInput_Move(object sender, ImportedPlayerInput.ImportedMovingEventArgs e) {
 		if( e.Direction.magnitude > 0f ) {
 			animator.SetFloat("xDirection", e.Direction.x);
 			animator.SetFloat("yDirection", e.Direction.y);
@@ -24,7 +24,7 @@ public class Animation : MonoBehaviour {
 		animator.SetFloat("Speed", e.Direction.magnitude);
 	}
 
-	private void PlayerInput_Face(object sender, PlayerInput.FacingEventArgs e) {
+	private void PlayerInput_Face(object sender, ImportedPlayerInput.ImportedFacingEventArgs e) {
 		animator.SetFloat("xDirection", e.Direction.x);
 		animator.SetFloat("yDirection", e.Direction.y);
 	}

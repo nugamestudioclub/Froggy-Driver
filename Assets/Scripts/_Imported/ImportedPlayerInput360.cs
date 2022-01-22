@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class PlayerInput360 : PlayerInput {
+public class PlayerInput360 : ImportedPlayerInput {
 	[SerializeField] private float rotationSpeed = 1.0f;
 	[SerializeField] private float reverseModifier = 0.4f;
 	private Vector3 facing;
@@ -14,8 +14,8 @@ public class PlayerInput360 : PlayerInput {
 	}
 
 	private void Update() {
-		float rAxis = Input.GetAxis("Horizontal");
-		float vAxis = Input.GetAxis("Vertical");
+		float rAxis = PlayerInput.GetAxis("Horizontal");
+		float vAxis = PlayerInput.GetAxis("Vertical");
 		Vector3 movement = new Vector3();
 		float angle;
 

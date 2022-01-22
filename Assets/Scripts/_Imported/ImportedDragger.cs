@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace Pazaak.Unity {
-	public class Dragger : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IDragHandler, IEndDragHandler {
+	public class ImportedDragger : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IDragHandler, IEndDragHandler {
 		private static Transform prevParent;
 
 		private static Vector3 startPosition;
@@ -20,9 +20,9 @@ namespace Pazaak.Unity {
 
 		private CanvasGroup canvasGroup;
 
-		private IDragController dragController;
+		private ImportedIDragController dragController;
 
-		static Dragger() {
+		static ImportedDragger() {
 			offset = new Vector3();
 		}
 
@@ -30,7 +30,7 @@ namespace Pazaak.Unity {
 			View = transform.Find("View").gameObject;
 			layoutElement = View.GetComponent<LayoutElement>();
 			canvasGroup = View.GetComponent<CanvasGroup>();
-			dragController = GetComponent<IDragController>();
+			dragController = GetComponent<ImportedIDragController>();
 			if( placeholder is null ) {
 				placeholder = new GameObject("Placeholder");
 				placeholder.AddComponent<LayoutElement>();
@@ -86,7 +86,7 @@ namespace Pazaak.Unity {
 
 		public void OnEndDrag(PointerEventData eventData) {
 			GameObject target = eventData.pointerCurrentRaycast.gameObject;
-			DropZone dropZone = target != null ? target.GetComponentInParent<DropZone>() : null;
+			ImportedDropZone dropZone = target != null ? target.GetComponentInParent<ImportedDropZone>() : null;
 
 			if( dropZone != null && dropZone.TryDrop(eventData) ) {
 

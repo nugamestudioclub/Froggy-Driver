@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
-public abstract class PlayerInput : MonoBehaviour {
+public abstract class ImportedPlayerInput : MonoBehaviour {
 	// Facing event
 
-	public class FacingEventArgs : EventArgs {
+	public class ImportedFacingEventArgs : EventArgs {
 		public Vector3 Direction { get; set; }
 	}
 
-	public static event EventHandler<FacingEventArgs> Facing;
+	public static event EventHandler<ImportedFacingEventArgs> Facing;
 
 	protected virtual void OnFacing(Vector3 direction) {
-		FacingEventArgs args = new FacingEventArgs {
+		ImportedFacingEventArgs args = new ImportedFacingEventArgs {
 			Direction = direction
 		};
 
@@ -20,15 +20,15 @@ public abstract class PlayerInput : MonoBehaviour {
 
 	// Moving event
 
-	public class MovingEventArgs : EventArgs {
+	public class ImportedMovingEventArgs : EventArgs {
 		public Vector3 Direction { get; set; }
 		public bool Jumping { get; set; }
 	}
 
-	public static event EventHandler<MovingEventArgs> Moving;
+	public static event EventHandler<ImportedMovingEventArgs> Moving;
 
 	protected virtual void OnMoving(Vector3 direction, bool jumping) {
-		MovingEventArgs args = new MovingEventArgs {
+		ImportedMovingEventArgs args = new ImportedMovingEventArgs {
 			Direction = direction,
 			Jumping = jumping
 		};
@@ -38,13 +38,13 @@ public abstract class PlayerInput : MonoBehaviour {
 
 	// Jumping Event
 
-	public class JumpingEventArgs : EventArgs {
+	public class ImportedJumpingEventArgs : EventArgs {
 		public Vector3 Direction { get; set; }
 	}
 
-	public static event EventHandler<JumpingEventArgs> Jumping;
+	public static event EventHandler<ImportedJumpingEventArgs> Jumping;
 	protected virtual void OnJumping(Vector3 direction) {
-		JumpingEventArgs args = new JumpingEventArgs {
+		ImportedJumpingEventArgs args = new ImportedJumpingEventArgs {
 			Direction = direction
 		};
 
