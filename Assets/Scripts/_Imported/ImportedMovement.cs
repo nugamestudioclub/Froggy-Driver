@@ -28,7 +28,7 @@ public class ImportedMovement : MonoBehaviour {
 	}
 
 	private void Update() {
-		if( PlayerInput.GetKeyDown(KeyCode.Space) ) {
+		if( Input.GetKeyDown(KeyCode.Space) ) {
 			StartCoroutine(Jump(0.5f));
 			Debug.Log("jump");
 		}

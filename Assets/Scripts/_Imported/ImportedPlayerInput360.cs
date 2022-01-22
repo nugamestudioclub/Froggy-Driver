@@ -14,8 +14,8 @@ public class PlayerInput360 : ImportedPlayerInput {
 	}
 
 	private void Update() {
-		float rAxis = PlayerInput.GetAxis("Horizontal");
-		float vAxis = PlayerInput.GetAxis("Vertical");
+		float rAxis = Input.GetAxis("Horizontal");
+		float vAxis = Input.GetAxis("Vertical");
 		Vector3 movement = new Vector3();
 		float angle;
 
