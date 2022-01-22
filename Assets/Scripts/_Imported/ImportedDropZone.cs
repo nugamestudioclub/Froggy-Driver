@@ -5,14 +5,14 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace Pazaak.Unity {
-	public class DropZone : MonoBehaviour, IDropHandler {
+	public class ImportedDropZone : MonoBehaviour, IDropHandler {
 		private static string viewName = "View";
 
 		private List<GameObject> views;
 
 		public GameObject View => views[views.Count - 1];
 
-		public DropZone() {
+		public ImportedDropZone() {
 			views = new List<GameObject>();
 		}
 
@@ -25,7 +25,7 @@ namespace Pazaak.Unity {
 		}
 
 		public bool TryDrop(PointerEventData eventData) {
-			Dragger dragger = eventData.pointerDrag.GetComponent<Dragger>();
+			ImportedDragger dragger = eventData.pointerDrag.GetComponent<ImportedDragger>();
 			bool destroy = false;
 
 			if( dragger != null ) {

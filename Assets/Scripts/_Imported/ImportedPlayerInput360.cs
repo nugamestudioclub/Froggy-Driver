@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class PlayerInput360 : PlayerInput {
+public class PlayerInput360 : ImportedPlayerInput {
 	[SerializeField] private float rotationSpeed = 1.0f;
 	[SerializeField] private float reverseModifier = 0.4f;
 	private Vector3 facing;

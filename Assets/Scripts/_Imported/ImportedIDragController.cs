@@ -1,7 +1,7 @@
 ﻿using UnityEngine.EventSystems;
 
 namespace Pazaak.Unity {
-	interface IDragController {
+	interface ImportedIDragController {
 		bool IsAllowed(PointerEventData eventData);
 
 		bool TryDrop(PointerEventData eventData);
