@@ -14,7 +14,7 @@ public class Portal : MonoBehaviour {
 	private void DiscardIfPossible(Collider2D collision) {
 		var grab = collision.gameObject.GetComponent<GrabbableController>();
 
-		if( grab != null && !grab.IsHeld && Contains(collision) )
+		if( grab != null && grab.IsDiscardable && Contains(collision) )
 			grab.Discard();
 	}
 
