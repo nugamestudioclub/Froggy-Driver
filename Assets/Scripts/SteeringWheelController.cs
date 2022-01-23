@@ -14,9 +14,11 @@ public class SteeringWheelController : MonoBehaviour {
 	[Range(0, MAX_DEGREES / 2)]
 	private float maxAngle = 90.0f;
 
-	private bool mouseIsOver = false;
+	public float MaxAngle => maxAngle;
 
-	private bool mouseIsDown = false;
+	private bool isOver = false;
+
+	private bool isHeld = false;
 
 	private static float AngleBetween(Vector2 p1, Vector2 p2) {
 		return Mathf.Rad2Deg * Mathf.Atan2(p2.y - p1.y, p2.x - p1.x);
@@ -58,8 +60,8 @@ public class SteeringWheelController : MonoBehaviour {
 		);
 	}
 
-	private void Update() {
-		if( !(mouseIsOver && mouseIsDown) ) {
+	void Update() {
+		if( !(isOver && isHeld) ) {
 			float z = transform.rotation.eulerAngles.z;
 			float deltaZ = Sign(z) * resetSpeed * Time.fixedDeltaTime;
 
@@ -67,30 +69,30 @@ public class SteeringWheelController : MonoBehaviour {
 			deltaZ = z - transform.rotation.eulerAngles.z;
 			
 			Rotate(deltaZ);
-			mouseIsDown = IsZero(transform.rotation.eulerAngles.z);
+			isHeld = IsZero(transform.rotation.eulerAngles.z);
 		}
 	}
 
-	private void OnMouseOver() {
-		mouseIsOver = true;
+	void OnMouseOver() {
+		isOver = true;
 	}
 
-	private void OnMouseExit() {
-		mouseIsOver = false;
+	void OnMouseExit() {
+		isOver = false;
 	}
 
-	private void OnMouseDown() {
-		mouseIsDown = true;
+	void OnMouseDown() {
+		isHeld = true;
 		angle = MouseAngle();
 	}
 
-	private void OnMouseUp() {
-		mouseIsDown = false;
+	void OnMouseUp() {
+		isHeld = false;
 	}
 
-	private void OnMouseDrag() {
+	void OnMouseDrag() {
 
-		if( mouseIsOver && mouseIsDown ) {
+		if( isOver && isHeld ) {
 			float mouseAngle = MouseAngle();
 			float deltaZ = mouseAngle - angle;
 			float z = ClampToMax(transform.rotation.eulerAngles.z + deltaZ);
@@ -102,5 +104,4 @@ public class SteeringWheelController : MonoBehaviour {
 			angle = mouseAngle;
 		}
 	}
-
 }
