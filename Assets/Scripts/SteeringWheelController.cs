@@ -79,19 +79,21 @@ public class SteeringWheelController : MonoBehaviour {
 
 	void OnMouseExit() {
 		isOver = false;
+		World.Instance.Hand.Open();
 	}
 
 	void OnMouseDown() {
 		isHeld = true;
 		angle = MouseAngle();
+		World.Instance.Hand.Close();
 	}
 
 	void OnMouseUp() {
 		isHeld = false;
+		World.Instance.Hand.Open();
 	}
 
 	void OnMouseDrag() {
-
 		if( isOver && isHeld ) {
 			float mouseAngle = MouseAngle();
 			float deltaZ = mouseAngle - angle;
