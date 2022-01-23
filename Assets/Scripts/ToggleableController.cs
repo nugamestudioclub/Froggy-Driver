@@ -17,6 +17,7 @@ public abstract class ToggleableController : MonoBehaviour
 
 		Debug.Log($"Clicking {gameObject.name}");
 		on = !on;
+		Toggle();
 	}
 
 	public abstract void Toggle();
