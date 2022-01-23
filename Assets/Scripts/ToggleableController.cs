@@ -18,17 +18,9 @@ public abstract class ToggleableController : MonoBehaviour
 		Debug.Log($"Clicking {gameObject.name}");
 		on = !on;
 		Toggle();
-		World.Instance.Hand.Close();
-		StartCoroutine(OpenHand());
+		World.Instance.Hand.Touch();
 		
 	}
-
-	private IEnumerator OpenHand()
-	{
-		yield return new WaitForSeconds(.2f);
-		World.Instance.Hand.Open();
-	}
-
 
     public abstract void Toggle();
 
