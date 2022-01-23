@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
 using UnityEngine;
 
 public class CarMovement : MonoBehaviour
@@ -13,22 +14,16 @@ public class CarMovement : MonoBehaviour
     /// 
     /// </summary>
     /// 
-    //[SerializeField]
-    //private Rigidbody2D rb;
-    [SerializeField]
-    GameObject backAxel;
-    [SerializeField]
-    private Transform rotationAxis;
 
 
-    float acceleration;
-    float angularAcceleration;
-    float currentSpeed;
-    float maxSpeed = 20;
+    public float acceleration = 5;
+    public float angularAcceleration = 2;
+    public float maxSpeed = 20;
+    [ReadOnly]
+    public float currentSpeed;
+
     Rigidbody2D rb;
-    bool breaking;
-
-    Vector2 facing;
+    bool breaking = false;
     float tiresAngle; //(-1 to 1)
 
     const float MAX_ANGLE = 30;
@@ -42,29 +37,31 @@ public class CarMovement : MonoBehaviour
     {
         //get components we need
         rb = GetComponentInChildren<Rigidbody2D>();
-        breaking = false;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        //get controls
+        
 
-        //add forces 
+        
         
         //if break not active
-        if (!breaking)
+        if (!breaking) //add forces 
         {
-            //rb.
             rb.AddForce(rb.transform.up * acceleration);
+        } else
+        {
+            rb.AddForce(-rb.transform.up * acceleration);
         }
 
+
+        //get controls
         GetCarInputs();
 
         //take in turning
         // Create car rotation
         float direction = Vector2.Dot(rb.velocity, rb.GetRelativeVector(Vector2.up));
-        //transform.Rotate(Vector3.forward, tiresAngle * MAX_ANGLE * Time.fixedDeltaTime);
         if (direction >= Mathf.Epsilon)
         {
             rb.rotation += tiresAngle * angularAcceleration * (rb.velocity.magnitude / maxSpeed);
@@ -73,7 +70,7 @@ public class CarMovement : MonoBehaviour
         {
             rb.rotation -= tiresAngle * angularAcceleration * (rb.velocity.magnitude / maxSpeed);
         }
-        //rb.AddTorque(tiresAngle);
+
 
         // Change velocity based on rotation
         float driftForce = Vector2.Dot(rb.velocity, rb.GetRelativeVector(Vector2.left)) * 2.0f;
@@ -81,8 +78,6 @@ public class CarMovement : MonoBehaviour
         Debug.DrawLine(rb.position, rb.GetRelativePoint(relativeForce), Color.green);
         rb.AddForce(rb.GetRelativeVector(relativeForce));
 
-
-       // rb.AddForce(transform.right * tiresAngle * rb.velocity.magnitude);
 
         // Force max speed limit
         if (rb.velocity.magnitude > maxSpeed)
@@ -105,11 +100,6 @@ public class CarMovement : MonoBehaviour
         {
             NormalizeTiresAngle(0f);
         }
-
-
-
-        acceleration = 5;
-        angularAcceleration = 2;
 
     }
 
