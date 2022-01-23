@@ -293,7 +293,8 @@ GameObject:
   - component: {fileID: 1265806675}
   - component: {fileID: 1265806674}
   - component: {fileID: 1265806673}
-  m_Layer: 0
+  - component: {fileID: 1265806678}
+  m_Layer: 7
   m_Name: Cabin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -364,8 +365,22 @@ CompositeCollider2D:
         Y: -200000000
       - X: -267500000
         Y: -200000000
+  - m_Collider: {fileID: 1265806678}
+    m_ColliderPaths:
+    - - X: 350000000
+        Y: 270000000
+      - X: -350000000
+        Y: 270000000
+      - X: -350000000
+        Y: 230000000
+      - X: 350000000
+        Y: 230000000
   m_CompositePaths:
     m_Paths:
+    - - {x: 34.999973, y: 23}
+      - {x: 34.999973, y: 27}
+      - {x: -35, y: 26.999971}
+      - {x: -34.999973, y: 23}
     - - {x: -26.750029, y: -20}
       - {x: -26.749971, y: -19.016903}
       - {x: 26.75, y: -19.016932}
@@ -479,6 +494,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5, y: 26}
   m_EdgeRadius: 0
+--- !u!61 &1265806678
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265806671}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 1
+  m_Offset: {x: 0, y: 25}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 70, y: 4}
+  m_EdgeRadius: 0
 --- !u!1001 &1349440580
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -493,7 +534,7 @@ PrefabInstance:
     - target: {fileID: 2215252423684760908, guid: 92343d19960e8e44b8b20545efcfd22d, type: 3}
       propertyPath: cabin
       value: 
-      objectReference: {fileID: 4073890151819567656}
+      objectReference: {fileID: 1265806671}
     - target: {fileID: 2215252423684760908, guid: 92343d19960e8e44b8b20545efcfd22d, type: 3}
       propertyPath: exteriorCamera
       value: 
@@ -557,7 +598,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1955756342321732060, guid: 1b9bf4c17608c3842b3e316f43bde4ff, type: 3}
   m_PrefabInstance: {fileID: 4073890151819567655}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4073890151819567656}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2171f94c5f8d58b48bdb919541fa591f, type: 3}
@@ -579,21 +620,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grabbable
       objectReference: {fileID: 0}
+    - target: {fileID: 8184549822439377470, guid: 4c640e35d402b7f488c532f14440dba3, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8184549822439404994, guid: 4c640e35d402b7f488c532f14440dba3, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8184549822439404994, guid: 4c640e35d402b7f488c532f14440dba3, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8184549822439404994, guid: 4c640e35d402b7f488c532f14440dba3, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8184549822439404994, guid: 4c640e35d402b7f488c532f14440dba3, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8184549822439404994, guid: 4c640e35d402b7f488c532f14440dba3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -605,7 +650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8184549822439404994, guid: 4c640e35d402b7f488c532f14440dba3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 8184549822439404994, guid: 4c640e35d402b7f488c532f14440dba3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -756,6 +801,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 586895927963023413, guid: 0e4834c5efd175c41ba2e94ba2d0367a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 586895927963023414, guid: 0e4834c5efd175c41ba2e94ba2d0367a, type: 3}
       propertyPath: externalCar
       value: 
@@ -763,6 +812,10 @@ PrefabInstance:
     - target: {fileID: 586895927963023415, guid: 0e4834c5efd175c41ba2e94ba2d0367a, type: 3}
       propertyPath: m_Name
       value: GearShift
+      objectReference: {fileID: 0}
+    - target: {fileID: 586895927963023415, guid: 0e4834c5efd175c41ba2e94ba2d0367a, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e4834c5efd175c41ba2e94ba2d0367a, type: 3}
@@ -773,6 +826,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1630478767266212180, guid: 667adf4e322810d48a7762eaf5a0ab8b, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2258377302532887086, guid: 667adf4e322810d48a7762eaf5a0ab8b, type: 3}
       propertyPath: m_Name
       value: ZoomOutButton
@@ -888,11 +945,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b9bf4c17608c3842b3e316f43bde4ff, type: 3}
---- !u!1 &4073890151819567656 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4073890152665726473, guid: 1b9bf4c17608c3842b3e316f43bde4ff, type: 3}
-  m_PrefabInstance: {fileID: 4073890151819567655}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4073890151819567657 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4073890152665726487, guid: 1b9bf4c17608c3842b3e316f43bde4ff, type: 3}
@@ -962,6 +1014,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 554104165525728180, guid: b336d59645f76354eacc42ca406bcfc5, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3066266359242859230, guid: b336d59645f76354eacc42ca406bcfc5, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3131849700322439775, guid: b336d59645f76354eacc42ca406bcfc5, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -1009,6 +1069,10 @@ PrefabInstance:
     - target: {fileID: 7407729573802370362, guid: b336d59645f76354eacc42ca406bcfc5, type: 3}
       propertyPath: m_Name
       value: Pothole
+      objectReference: {fileID: 0}
+    - target: {fileID: 7407729573802370362, guid: b336d59645f76354eacc42ca406bcfc5, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b336d59645f76354eacc42ca406bcfc5, type: 3}
@@ -1092,6 +1156,10 @@ PrefabInstance:
     - target: {fileID: 4961055675939626136, guid: dbd7cf7a5080fb94c950edac9b7ebad4, type: 3}
       propertyPath: m_Name
       value: ZoomInButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 5561651034258810850, guid: dbd7cf7a5080fb94c950edac9b7ebad4, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7407747066399948768, guid: dbd7cf7a5080fb94c950edac9b7ebad4, type: 3}
       propertyPath: m_RootOrder
