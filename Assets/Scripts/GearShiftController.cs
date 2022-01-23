@@ -9,17 +9,41 @@ public class GearShiftController : ToggleableController
     private CarMovement externalCar;
 
     [SerializeField]
-    private Vector3 startingPos;
+    private Vector2 startingPos;
     [SerializeField]
-    private Vector3 alternatePos;
+    private Vector2 alternatePos;
 
+    private Collider2D collider2d;
+    private SpriteRenderer sprite;
+    [SerializeField]
+    private Sprite driveSprite;
+    [SerializeField]
+    private Sprite reverseSprite;
+
+    private void Start()
+    {
+        collider2d = GetComponent<Collider2D>();
+        sprite = GetComponentInChildren<SpriteRenderer>();
+        collider2d.offset = startingPos;
+    }
 
     public override void Toggle()
     {
-        //swap sprite
+       
+        if (IsOn())
+        {
+            sprite.sprite = reverseSprite;
+            collider2d.offset = alternatePos;
+            
 
+        } else
+        {
+            sprite.sprite = driveSprite;//swap sprite
+            collider2d.offset = startingPos; //move collider to other area
+        }
+   
         //move collider to other area
-        transform.position = IsOn() ? startingPos : alternatePos;
+
         //toggle reverse on car
         externalCar.ToggleReverse();
     }
