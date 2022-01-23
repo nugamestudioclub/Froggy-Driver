@@ -7,10 +7,10 @@ public class Hand : MonoBehaviour {
 	[SerializeField]
 	private Texture2D closedTexture;
 
-	[SerializeField]
-	private Vector2 offset = Vector2.zero;
+	private Vector2 offset;
 
 	private void Start() {
+		offset = new Vector2(openTexture.width / 2, openTexture.height / 2);
 		Open();
 	}
 
