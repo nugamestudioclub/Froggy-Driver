@@ -10,4 +10,8 @@ public class World : MonoBehaviour {
 	void Awake() {
 		Instance = this;
 	}
+
+	public void Take(GameObject obj) {
+		Destroy(obj);
+	}
 }
