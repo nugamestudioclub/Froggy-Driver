@@ -78,13 +78,27 @@ public class GrabbableController : MonoBehaviour {
 
 	void OnMouseUp() {
 		isHeld = false;
-		dir = (Vector2)transform.position - lastPosition;
+		dir = new Vector3(
+			transform.position.x - lastPosition.x,
+			transform.position.y - lastPosition.y,
+			transform.position.z
+		);
 		canBePushed = true;
 		World.Instance.Hand.Open();
 	}
 
 	void OnMouseDrag() {
-		transform.position = Vector2.Lerp(transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition), moveSpeed);
+		var pos = Vector2.Lerp(
+			transform.position,
+			World.Instance.InteriorCamera.ScreenToWorldPoint(Input.mousePosition),
+			moveSpeed
+		);
+		var delta = new Vector3(
+			pos.x - transform.position.x,
+			pos.y - transform.position.y
+		);
+
+		transform.Translate(delta);
 	}
 
 	private IEnumerator SavePosition() {
