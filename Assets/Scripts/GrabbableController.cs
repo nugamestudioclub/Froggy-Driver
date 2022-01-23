@@ -47,12 +47,14 @@ public class GrabbableController : MonoBehaviour {
 
 	void OnMouseDown() {
 		IsHeld = true;
+		World.Instance.Hand.Close();
 	}
 
 	void OnMouseUp() {
 		IsHeld = false;
 		dir = (Vector2)transform.position - lastPosition;
 		canBePushed = true;
+		World.Instance.Hand.Open();
 	}
 
 	void OnMouseDrag() {
