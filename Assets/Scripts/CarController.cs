@@ -19,4 +19,14 @@ public class CarController : MonoBehaviour
     {
         
     }
+
+    public void ShakeCar()
+    {
+        Debug.Log("Car shaking");
+        //apply force from below
+
+        //camera shake
+
+        //sound effect
+    }
 }
