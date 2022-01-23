@@ -32,11 +32,17 @@ public class GrabbableController : MonoBehaviour {
 	private bool canBePushed;
 
 	[SerializeField]
-	[Range(0, float.MaxValue)]
-	private float fadeSpeed = 0.1f;
+	private bool fadeOnSpawn = true;
 
 	[SerializeField]
-	private bool isDiscardable = true;
+	[Range(0, float.MaxValue)]
+	private float fadeTime = 0.1f;
+
+	[SerializeField]
+	[Range(0, float.MaxValue)]
+	private float spawnTime = 3.0f;
+
+	private bool isDiscardable;
 	public bool IsDiscardable {
 		get => isDiscardable && !isHeld;
 		protected set => isDiscardable = value;
@@ -45,10 +51,12 @@ public class GrabbableController : MonoBehaviour {
 	private void Awake() {
 		rb = GetComponent<Rigidbody2D>();
 		myRenderer = GetComponent<Renderer>();
+
 	}
 
 	void Start() {
 		lastPosition = transform.position;
+		Spawn();
 	}
 
 	void Update() {
@@ -70,13 +78,27 @@ public class GrabbableController : MonoBehaviour {
 
 	void OnMouseUp() {
 		isHeld = false;
-		dir = (Vector2)transform.position - lastPosition;
+		dir = new Vector3(
+			transform.position.x - lastPosition.x,
+			transform.position.y - lastPosition.y,
+			transform.position.z
+		);
 		canBePushed = true;
 		World.Instance.Hand.Open();
 	}
 
 	void OnMouseDrag() {
-		transform.position = Vector2.Lerp(transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition), moveSpeed);
+		var pos = Vector2.Lerp(
+			transform.position,
+			World.Instance.InteriorCamera.ScreenToWorldPoint(Input.mousePosition),
+			moveSpeed
+		);
+		var delta = new Vector3(
+			pos.x - transform.position.x,
+			pos.y - transform.position.y
+		);
+
+		transform.Translate(delta);
 	}
 
 	private IEnumerator SavePosition() {
@@ -84,6 +106,15 @@ public class GrabbableController : MonoBehaviour {
 		lastPosition = transform.position;
 		yield return new WaitForSeconds(saveDelay);
 		nextSave = true;
+	}
+
+	public virtual void Spawn() {
+		if( fadeOnSpawn ) {
+			StartCoroutine(FadeIn());
+		}
+		else {
+			IsDiscardable = true;
+		}
 	}
 
 	public virtual void Discard() {
@@ -94,12 +125,15 @@ public class GrabbableController : MonoBehaviour {
 	private IEnumerator FadeIn() {
 		Color color = myRenderer.material.color;
 
+		IsDiscardable = false;
 		for( int alpha = 0; alpha < 10; ++alpha ) {
 			color.a = alpha * 0.1f;
 			myRenderer.material.color = color;
 
-			yield return new WaitForSeconds(fadeSpeed);
+			yield return new WaitForSeconds(fadeTime);
 		}
+		yield return new WaitForSeconds(spawnTime);
+		IsDiscardable = true;
 	}
 
 	private IEnumerator FadeOut() {
@@ -109,7 +143,7 @@ public class GrabbableController : MonoBehaviour {
 			color.a = alpha * 0.1f;
 			myRenderer.material.color = color;
 
-			yield return new WaitForSeconds(fadeSpeed);
+			yield return new WaitForSeconds(fadeTime);
 		}
 
 		World.Instance.Take(gameObject);
