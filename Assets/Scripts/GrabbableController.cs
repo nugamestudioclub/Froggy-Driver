@@ -33,7 +33,7 @@ public class GrabbableController : MonoBehaviour {
 
 	[SerializeField]
 	[Range(0, float.MaxValue)]
-	private float fadeSpeed = 1.0f;
+	private float fadeSpeed = 0.1f;
 
 	[SerializeField]
 	private bool isDiscardable = true;
@@ -53,7 +53,7 @@ public class GrabbableController : MonoBehaviour {
 
 	void Update() {
 		if( nextSave )
-			StartCoroutine("SavePosition");
+			StartCoroutine(SavePosition());
 	}
 
 	void FixedUpdate() {
@@ -88,21 +88,30 @@ public class GrabbableController : MonoBehaviour {
 
 	public virtual void Discard() {
 		IsDiscardable = false;
-		World.Instance.Take(gameObject);
+		StartCoroutine(FadeOut());
+	}
+
+	private IEnumerator FadeIn() {
+		Color color = myRenderer.material.color;
+
+		for( int alpha = 0; alpha < 10; ++alpha ) {
+			color.a = alpha * 0.1f;
+			myRenderer.material.color = color;
+
+			yield return new WaitForSeconds(fadeSpeed);
+		}
 	}
 
 	private IEnumerator FadeOut() {
-		float alpha = myRenderer.material.color.a;
+		Color color = myRenderer.material.color;
 
-		while( alpha < 1 ) {
-			alpha += fadeSpeed * Time.fixedDeltaTime;
-			myRenderer.material.color = new Color(
-				myRenderer.material.color.r,
-				myRenderer.material.color.g,
-				myRenderer.material.color.b,
-				alpha
-			);
-			yield return null;
+		for( int alpha = 10; alpha >= 0; --alpha ) {
+			color.a = alpha * 0.1f;
+			myRenderer.material.color = color;
+
+			yield return new WaitForSeconds(fadeSpeed);
 		}
+
+		World.Instance.Take(gameObject);
 	}
 }
