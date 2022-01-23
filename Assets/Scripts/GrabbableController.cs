@@ -32,11 +32,17 @@ public class GrabbableController : MonoBehaviour {
 	private bool canBePushed;
 
 	[SerializeField]
-	[Range(0, float.MaxValue)]
-	private float fadeSpeed = 0.1f;
+	private bool fadeOnSpawn = true;
 
 	[SerializeField]
-	private bool isDiscardable = true;
+	[Range(0, float.MaxValue)]
+	private float fadeTime = 0.1f;
+
+	[SerializeField]
+	[Range(0, float.MaxValue)]
+	private float spawnTime = 3.0f;
+
+	private bool isDiscardable;
 	public bool IsDiscardable {
 		get => isDiscardable && !isHeld;
 		protected set => isDiscardable = value;
@@ -45,10 +51,12 @@ public class GrabbableController : MonoBehaviour {
 	private void Awake() {
 		rb = GetComponent<Rigidbody2D>();
 		myRenderer = GetComponent<Renderer>();
+
 	}
 
 	void Start() {
 		lastPosition = transform.position;
+		Spawn();
 	}
 
 	void Update() {
@@ -86,6 +94,15 @@ public class GrabbableController : MonoBehaviour {
 		nextSave = true;
 	}
 
+	public virtual void Spawn() {
+		if( fadeOnSpawn ) {
+			StartCoroutine(FadeIn());
+		}
+		else {
+			IsDiscardable = true;
+		}
+	}
+
 	public virtual void Discard() {
 		IsDiscardable = false;
 		StartCoroutine(FadeOut());
@@ -94,12 +111,15 @@ public class GrabbableController : MonoBehaviour {
 	private IEnumerator FadeIn() {
 		Color color = myRenderer.material.color;
 
+		IsDiscardable = false;
 		for( int alpha = 0; alpha < 10; ++alpha ) {
 			color.a = alpha * 0.1f;
 			myRenderer.material.color = color;
 
-			yield return new WaitForSeconds(fadeSpeed);
+			yield return new WaitForSeconds(fadeTime);
 		}
+		yield return new WaitForSeconds(spawnTime);
+		IsDiscardable = true;
 	}
 
 	private IEnumerator FadeOut() {
@@ -109,7 +129,7 @@ public class GrabbableController : MonoBehaviour {
 			color.a = alpha * 0.1f;
 			myRenderer.material.color = color;
 
-			yield return new WaitForSeconds(fadeSpeed);
+			yield return new WaitForSeconds(fadeTime);
 		}
 
 		World.Instance.Take(gameObject);
