@@ -18,8 +18,23 @@ public abstract class ToggleableController : MonoBehaviour
 		Debug.Log($"Clicking {gameObject.name}");
 		on = !on;
 		Toggle();
+		World.Instance.Hand.Close();
+		StartCoroutine(OpenHand());
+		
 	}
 
-	public abstract void Toggle();
+	private IEnumerator OpenHand()
+	{
+		yield return new WaitForSeconds(.2f);
+		World.Instance.Hand.Open();
+	}
+
+
+    public abstract void Toggle();
+
+	public bool IsOn()
+    {
+		return on;
+    }
 
 }

@@ -23,7 +23,7 @@ public class CarMovement : MonoBehaviour
     public float currentSpeed;
 
     Rigidbody2D rb;
-    bool breaking = false;
+    bool reverse = false;
     float tiresAngle; //(-1 to 1)
 
     const float MAX_ANGLE = 30;
@@ -47,7 +47,7 @@ public class CarMovement : MonoBehaviour
         
         
         //if break not active
-        if (!breaking) //add forces 
+        if (!reverse) //add forces 
         {
             rb.AddForce(rb.transform.up * acceleration);
         } else
@@ -114,5 +114,10 @@ public class CarMovement : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         carInterior.ShakeCar();
+    }
+
+    public void ToggleReverse()
+    {
+        reverse = !reverse;
     }
 }

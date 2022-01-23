@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2258377302532887086
+--- !u!1 &4961055675939626136
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4414637453091270998}
-  - component: {fileID: 1630478767266212180}
-  - component: {fileID: 7100217233735907496}
+  - component: {fileID: 7407747066399948768}
+  - component: {fileID: 5561651034258810850}
+  - component: {fileID: 2262210003940500800}
   m_Layer: 0
-  m_Name: ZoomOutButton
+  m_Name: ZoomInButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4414637453091270998
+--- !u!4 &7407747066399948768
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2258377302532887086}
+  m_GameObject: {fileID: 4961055675939626136}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.96, y: -8.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1630478767266212180
+--- !u!61 &5561651034258810850
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2258377302532887086}
+  m_GameObject: {fileID: 4961055675939626136}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -59,18 +59,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.75, y: 1.75}
   m_EdgeRadius: 0
---- !u!114 &7100217233735907496
+--- !u!114 &2262210003940500800
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2258377302532887086}
+  m_GameObject: {fileID: 4961055675939626136}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b9f73bc37f62944a97ce4c59c974ee5, type: 3}
+  m_Script: {fileID: 11500000, guid: 3922c018f01d0fb41a8fde8cc7e24837, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   on: 0
   cam: {fileID: 0}
-  maxCamSize: 10
+  minCamSize: 3
