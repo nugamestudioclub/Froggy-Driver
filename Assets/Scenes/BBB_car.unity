@@ -274,11 +274,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!20 &1173703395 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 329402725735827576, guid: 0cfeb9b69470dbe4d82cbdda5c7a37ec, type: 3}
-  m_PrefabInstance: {fileID: 329402725368867735}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1265806671
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,7 +537,7 @@ PrefabInstance:
     - target: {fileID: 2215252423684760908, guid: 92343d19960e8e44b8b20545efcfd22d, type: 3}
       propertyPath: interiorCamera
       value: 
-      objectReference: {fileID: 1173703395}
+      objectReference: {fileID: 0}
     - target: {fileID: 2215252423684760910, guid: 92343d19960e8e44b8b20545efcfd22d, type: 3}
       propertyPath: m_Name
       value: World
@@ -616,6 +611,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8184549822439377468, guid: 4c640e35d402b7f488c532f14440dba3, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8184549822439377470, guid: 4c640e35d402b7f488c532f14440dba3, type: 3}
       propertyPath: m_Name
       value: Grabbable
@@ -630,15 +629,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8184549822439404994, guid: 4c640e35d402b7f488c532f14440dba3, type: 3}
       propertyPath: m_LocalScale.x
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8184549822439404994, guid: 4c640e35d402b7f488c532f14440dba3, type: 3}
       propertyPath: m_LocalScale.y
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8184549822439404994, guid: 4c640e35d402b7f488c532f14440dba3, type: 3}
       propertyPath: m_LocalScale.z
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8184549822439404994, guid: 4c640e35d402b7f488c532f14440dba3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -894,7 +893,11 @@ PrefabInstance:
     - target: {fileID: 224387870, guid: 1b9bf4c17608c3842b3e316f43bde4ff, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0d69edb7e2be80b4e9fe2c266ab1b0e2, type: 3}
+      objectReference: {fileID: 21300000, guid: 324fa31bc7dcd3f40a011dd6375a3235, type: 3}
+    - target: {fileID: 224387870, guid: 1b9bf4c17608c3842b3e316f43bde4ff, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4073890152665726473, guid: 1b9bf4c17608c3842b3e316f43bde4ff, type: 3}
       propertyPath: m_Name
       value: Dashboard
