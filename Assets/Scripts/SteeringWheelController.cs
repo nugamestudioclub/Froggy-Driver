@@ -52,7 +52,7 @@ public class SteeringWheelController : MonoBehaviour {
 		transform.Rotate(0.0f, 0.0f, deltaZ);
 	}
 	private float MouseAngle() {
-		var pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		var pos = World.Instance.InteriorCamera.ScreenToWorldPoint(Input.mousePosition);
 
 		return AngleBetween(
 			new Vector2(pos.x, pos.y),

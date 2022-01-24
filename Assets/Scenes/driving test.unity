@@ -281,6 +281,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2215252423684760908, guid: 92343d19960e8e44b8b20545efcfd22d, type: 3}
+      propertyPath: car
+      value: 
+      objectReference: {fileID: 1721912382}
+    - target: {fileID: 2215252423684760908, guid: 92343d19960e8e44b8b20545efcfd22d, type: 3}
+      propertyPath: cabin
+      value: 
+      objectReference: {fileID: 1387322414}
+    - target: {fileID: 2215252423684760908, guid: 92343d19960e8e44b8b20545efcfd22d, type: 3}
+      propertyPath: exteriorCamera
+      value: 
+      objectReference: {fileID: 1618148016}
+    - target: {fileID: 2215252423684760908, guid: 92343d19960e8e44b8b20545efcfd22d, type: 3}
+      propertyPath: interiorCamera
+      value: 
+      objectReference: {fileID: 1881133319}
     - target: {fileID: 2215252423684760910, guid: 92343d19960e8e44b8b20545efcfd22d, type: 3}
       propertyPath: m_Name
       value: World
@@ -331,12 +347,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92343d19960e8e44b8b20545efcfd22d, type: 3}
+--- !u!1 &1387322414 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4073890152665726473, guid: 1b9bf4c17608c3842b3e316f43bde4ff, type: 3}
+  m_PrefabInstance: {fileID: 4073890151819567655}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1387322417 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1955756342321732060, guid: 1b9bf4c17608c3842b3e316f43bde4ff, type: 3}
   m_PrefabInstance: {fileID: 4073890151819567655}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1387322414}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2171f94c5f8d58b48bdb919541fa591f, type: 3}
@@ -347,17 +368,27 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 6510054930506695619, guid: 50c1aa327da0577439423f9539acee0c, type: 3}
   m_PrefabInstance: {fileID: 6510054931046807923}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1721912382 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6510054930620970317, guid: 50c1aa327da0577439423f9539acee0c, type: 3}
+  m_PrefabInstance: {fileID: 6510054931046807923}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1721912383 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6510054930620970316, guid: 50c1aa327da0577439423f9539acee0c, type: 3}
   m_PrefabInstance: {fileID: 6510054931046807923}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1721912382}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9ad4dde7280d2546842ae737decc68f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!20 &1881133319 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 477994435247063755, guid: 0cfeb9b69470dbe4d82cbdda5c7a37ec, type: 3}
+  m_PrefabInstance: {fileID: 329402725368867735}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &329402725368867735
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -422,38 +453,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 80423730112142774, guid: 1b9bf4c17608c3842b3e316f43bde4ff, type: 3}
-      propertyPath: m_Offset.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 80423730112142774, guid: 1b9bf4c17608c3842b3e316f43bde4ff, type: 3}
-      propertyPath: m_Offset.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3952325076325076953, guid: 1b9bf4c17608c3842b3e316f43bde4ff, type: 3}
-      propertyPath: driveSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 4909e48aff8bebd4e9852f1a34421de5, type: 3}
     - target: {fileID: 3952325076325076953, guid: 1b9bf4c17608c3842b3e316f43bde4ff, type: 3}
       propertyPath: externalCar
       value: 
       objectReference: {fileID: 1721912383}
-    - target: {fileID: 3952325076325076953, guid: 1b9bf4c17608c3842b3e316f43bde4ff, type: 3}
-      propertyPath: reverseSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 8c3e68e26ada2d448bba748986bdb13d, type: 3}
-    - target: {fileID: 3952325076325076953, guid: 1b9bf4c17608c3842b3e316f43bde4ff, type: 3}
-      propertyPath: startingPos.x
-      value: -2.58
-      objectReference: {fileID: 0}
-    - target: {fileID: 3952325076325076953, guid: 1b9bf4c17608c3842b3e316f43bde4ff, type: 3}
-      propertyPath: startingPos.y
-      value: -10.13
-      objectReference: {fileID: 0}
-    - target: {fileID: 3952325076325076953, guid: 1b9bf4c17608c3842b3e316f43bde4ff, type: 3}
-      propertyPath: alternatePos.x
-      value: 2.58
-      objectReference: {fileID: 0}
     - target: {fileID: 4073890152665726473, guid: 1b9bf4c17608c3842b3e316f43bde4ff, type: 3}
       propertyPath: m_Name
       value: Car Interior
@@ -506,10 +509,6 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1618148016}
-    - target: {fileID: 7018343296530880585, guid: 1b9bf4c17608c3842b3e316f43bde4ff, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8963230247841782869, guid: 1b9bf4c17608c3842b3e316f43bde4ff, type: 3}
       propertyPath: cam
       value: 
