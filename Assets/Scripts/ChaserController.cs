@@ -11,8 +11,7 @@ public class ChaserController : MonoBehaviour
     private float maxSpeed;
     [SerializeField]
     private float acceleration;
-    [SerializeField]
-    private float appearInFrontDistance;
+
     private float chaseSpeed;
     private BoxCollider2D bc;
 
