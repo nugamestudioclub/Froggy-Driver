@@ -121,6 +121,8 @@ public class GrabbableController : MonoBehaviour {
 	}
 
 	public virtual void Discard() {
+		myRenderer.sortingOrder = 0;
+
 		Debug.Log(nameof(Discard));
 		IsDiscardable = false;
 		StartCoroutine(FadeOut());

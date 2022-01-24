@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 324fa31bc7dcd3f40a011dd6375a3235, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -285,7 +285,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: ab29e4a247127b241bf62abf517cf53d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -369,7 +369,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 8973312098b5ef645bfa3fe305a38234, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -453,7 +453,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 4909e48aff8bebd4e9852f1a34421de5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -692,7 +692,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 3bd833ab523e17848931915152c0e5e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -896,6 +896,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 636196919663345336}
     m_Modifications:
+    - target: {fileID: 150541344744174597, guid: 667adf4e322810d48a7762eaf5a0ab8b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2258377302532887086, guid: 667adf4e322810d48a7762eaf5a0ab8b, type: 3}
       propertyPath: m_Name
       value: ZoomOutButton
@@ -1226,6 +1230,10 @@ PrefabInstance:
     - target: {fileID: 4961055675939626136, guid: dbd7cf7a5080fb94c950edac9b7ebad4, type: 3}
       propertyPath: m_Name
       value: ZoomInButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 7156024065799855862, guid: dbd7cf7a5080fb94c950edac9b7ebad4, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7407747066399948768, guid: dbd7cf7a5080fb94c950edac9b7ebad4, type: 3}
       propertyPath: m_RootOrder
