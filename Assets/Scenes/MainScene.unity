@@ -801,7 +801,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 528479339834921395, guid: 1b9bf4c17608c3842b3e316f43bde4ff, type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1955756342321732060, guid: 1b9bf4c17608c3842b3e316f43bde4ff, type: 3}
       propertyPath: cameraShake
