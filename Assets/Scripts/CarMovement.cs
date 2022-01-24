@@ -111,7 +111,7 @@ public class CarMovement : MonoBehaviour
     {
         //Debug.Log($"Wheel angle is {angle}!");
         tiresAngle =  (angle) / (MAX_ANGLE);
-        Debug.Log($"Tires angle is {tiresAngle}!");
+      //  Debug.Log($"Tires angle is {tiresAngle}!");
     }
  
 

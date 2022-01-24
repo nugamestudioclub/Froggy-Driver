@@ -121,6 +121,9 @@ public class GrabbableController : MonoBehaviour {
 	}
 
 	public virtual void Discard() {
+		myRenderer.sortingOrder = 0;
+
+		Debug.Log(nameof(Discard));
 		IsDiscardable = false;
 		StartCoroutine(FadeOut());
 	}
@@ -128,6 +131,7 @@ public class GrabbableController : MonoBehaviour {
 	private IEnumerator FadeIn() {
 		Color color = myRenderer.material.color;
 
+		Debug.Log(nameof(FadeIn));
 		IsDiscardable = false;
 		for( int alpha = 0; alpha < 10; ++alpha ) {
 			color.a = alpha * 0.1f;
@@ -140,6 +144,7 @@ public class GrabbableController : MonoBehaviour {
 	}
 
 	private IEnumerator FadeOut() {
+		Debug.Log("fade out");
 		Color color = myRenderer.material.color;
 
 		for( int alpha = 10; alpha >= 0; --alpha ) {
