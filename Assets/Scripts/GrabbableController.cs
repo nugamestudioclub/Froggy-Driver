@@ -13,6 +13,12 @@ public class GrabbableController : MonoBehaviour {
 	private Collider2D myCollider;
 
 	[SerializeField]
+	[Range(0, int.MaxValue)]
+	private int heldSortingOrder = 10;
+
+	private int lastSortingOrder;
+
+	[SerializeField]
 	[Range(0, float.MaxValue)]
 	private float moveSpeed = 1.0f;
 
@@ -59,6 +65,7 @@ public class GrabbableController : MonoBehaviour {
 
 	void Start() {
 		lastPosition = transform.position;
+		lastSortingOrder = myRenderer.sortingOrder;
 		Spawn();
 	}
 
@@ -74,20 +81,19 @@ public class GrabbableController : MonoBehaviour {
 		}
 	}
 
+
 	void OnMouseDown() {
-		isHeld = true;
-		World.Instance.Hand.Close();
+		Hold();
 	}
 
 	void OnMouseUp() {
-		isHeld = false;
+		LetGo();
 		dir = new Vector3(
 			transform.position.x - lastPosition.x,
 			transform.position.y - lastPosition.y,
 			transform.position.z
 		);
 		canBePushed = true;
-		World.Instance.Hand.Open();
 	}
 
 	void OnMouseDrag() {
@@ -112,6 +118,7 @@ public class GrabbableController : MonoBehaviour {
 	}
 
 	public virtual void Spawn() {
+		myRenderer.sortingOrder = 3;
 		if( fadeOnSpawn ) {
 			StartCoroutine(FadeIn());
 		}
@@ -123,15 +130,26 @@ public class GrabbableController : MonoBehaviour {
 	public virtual void Discard() {
 		myRenderer.sortingOrder = 0;
 
-		Debug.Log(nameof(Discard));
 		IsDiscardable = false;
 		StartCoroutine(FadeOut());
+	}
+
+	private void Hold() {
+		isHeld = true;
+		lastSortingOrder = myRenderer.sortingOrder;
+		myRenderer.sortingOrder = heldSortingOrder;
+		World.Instance.Hand.Close();
+	}
+
+	private void LetGo() {
+		isHeld = false;
+		myRenderer.sortingOrder = lastSortingOrder;
+		World.Instance.Hand.Open();
 	}
 
 	private IEnumerator FadeIn() {
 		Color color = myRenderer.material.color;
 
-		Debug.Log(nameof(FadeIn));
 		IsDiscardable = false;
 		for( int alpha = 0; alpha < 10; ++alpha ) {
 			color.a = alpha * 0.1f;
@@ -144,7 +162,6 @@ public class GrabbableController : MonoBehaviour {
 	}
 
 	private IEnumerator FadeOut() {
-		Debug.Log("fade out");
 		Color color = myRenderer.material.color;
 
 		for( int alpha = 10; alpha >= 0; --alpha ) {
