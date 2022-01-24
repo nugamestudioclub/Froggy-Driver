@@ -21,9 +21,8 @@ public class Portal : MonoBehaviour {
 	}
 
 	private void DiscardIfPossible(Collider2D collision) {
-		var grab = collision.gameObject.GetComponent<GrabbableController>();
-
-		if( grab != null && grab.IsDiscardable && Contains(collision) )
+		if( collision.gameObject.TryGetComponent(out GrabbableController grab)
+			&& grab.IsDiscardable && Contains(collision) )
 			grab.Discard();
 	}
 
@@ -33,5 +32,9 @@ public class Portal : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D collision) {
 		DiscardIfPossible(collision);
+	}
+
+	public void Spawn(GameObject obj) {
+
 	}
 }

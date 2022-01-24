@@ -56,16 +56,14 @@ public class GrabbableController : MonoBehaviour {
 		protected set => isDiscardable = value;
 	}
 
-	private void Awake() {
-		myRenderer = GetComponent<Renderer>();
-		if( myRenderer == null )
-			myRenderer = gameObject.GetComponentInChildren<Renderer>();
-		myBody = GetComponent<Rigidbody2D>();
-		myCollider = GetComponent<Collider2D>();
-
-	}
-
 	void Start() {
+		if( !TryGetComponent(out myRenderer) )
+			myRenderer = gameObject.GetComponentInChildren<Renderer>();
+		if( !TryGetComponent(out myBody) )
+			myBody = GetComponent<Rigidbody2D>();
+		if( !TryGetComponent(out myCollider) )
+			myCollider = GetComponentInChildren<Collider2D>();
+
 		lastPosition = transform.position;
 		lastSortingOrder = myRenderer.sortingOrder;
 		Spawn();
@@ -178,6 +176,7 @@ public class GrabbableController : MonoBehaviour {
 	private Vector2 ClampToScreen(Vector2 pos) {
 		const float PADDING = 0.02f;
 		var camera = World.Instance.InteriorCamera;
+
 		float y = camera.orthographicSize - (myCollider.bounds.size.y / 2) - PADDING;
 		float x = (camera.orthographicSize * camera.aspect) - (myCollider.bounds.size.x / 2) - PADDING;
 		float minX = camera.transform.position.x - x;

@@ -4,12 +4,6 @@ public class World : MonoBehaviour {
 	public static World Instance { get; private set; }
 
 	[SerializeField]
-	private GameObject car;
-
-	[SerializeField]
-	private GameObject cabin;
-
-	[SerializeField]
 	private Hand hand;
 	public Hand Hand => hand;
 
@@ -21,6 +15,9 @@ public class World : MonoBehaviour {
 	private Camera exteriorCamera;
 	public Camera ExteriorCamera => exteriorCamera;
 
+	[SerializeField]
+	private CabinController cabin;
+
 	void Awake() {
 		Instance = this;
 	}
@@ -30,6 +27,6 @@ public class World : MonoBehaviour {
 	}
 
 	public void Give(GameObject obj) {
-
+		cabin.Take(obj);
 	}
 }
