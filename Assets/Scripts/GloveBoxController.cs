@@ -16,6 +16,9 @@ public class GloveBoxController : MonoBehaviour
     [SerializeField]
     GameObject cross;
 
+    [SerializeField]
+    private int openSortingOrder;
+
     private BoxCollider2D boxCollider;
     // Start is called before the first frame update
     void Start()
@@ -30,7 +33,7 @@ public class GloveBoxController : MonoBehaviour
         {
             //change sprite to open
             sprite.sprite = openSprite;
-            sprite.sortingOrder = 2;
+            sprite.sortingOrder = openSortingOrder;
             //spawn cross
             Instantiate(cross, boxCollider.bounds.center, Quaternion.identity);
             //make open
