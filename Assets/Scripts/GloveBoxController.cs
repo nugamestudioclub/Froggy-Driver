@@ -30,6 +30,7 @@ public class GloveBoxController : MonoBehaviour
         {
             //change sprite to open
             sprite.sprite = openSprite;
+            sprite.sortingOrder = 2;
             //spawn cross
             Instantiate(cross, boxCollider.bounds.center, Quaternion.identity);
             //make open
