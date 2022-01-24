@@ -5,7 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
 public class GrabbableController : MonoBehaviour {
-	[SerializeField]
 	private Renderer myRenderer;
 
 	private Rigidbody2D myBody;
@@ -58,6 +57,9 @@ public class GrabbableController : MonoBehaviour {
 	}
 
 	private void Awake() {
+		myRenderer = GetComponent<Renderer>();
+		if( myRenderer == null )
+			myRenderer = gameObject.GetComponentInChildren<Renderer>();
 		myBody = GetComponent<Rigidbody2D>();
 		myCollider = GetComponent<Collider2D>();
 
