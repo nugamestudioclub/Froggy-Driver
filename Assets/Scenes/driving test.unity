@@ -143,18 +143,6 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1221596036581730317, guid: bab93bdc3f421054d992ef1585a7730e, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1221596036581730317, guid: bab93bdc3f421054d992ef1585a7730e, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1221596036581730317, guid: bab93bdc3f421054d992ef1585a7730e, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1221596036581730317, guid: bab93bdc3f421054d992ef1585a7730e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -490,10 +478,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1207649255181629317, guid: 9b19ead7130ec924196215f69cd71e9a, type: 3}
-      propertyPath: maxSpeed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1207649255181629317, guid: 9b19ead7130ec924196215f69cd71e9a, type: 3}
       propertyPath: playerPos
       value: 
       objectReference: {fileID: 1721912384}
@@ -504,18 +488,6 @@ PrefabInstance:
     - target: {fileID: 7299759396016632496, guid: 9b19ead7130ec924196215f69cd71e9a, type: 3}
       propertyPath: m_RootOrder
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 7299759396016632496, guid: 9b19ead7130ec924196215f69cd71e9a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7299759396016632496, guid: 9b19ead7130ec924196215f69cd71e9a, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7299759396016632496, guid: 9b19ead7130ec924196215f69cd71e9a, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7299759396016632496, guid: 9b19ead7130ec924196215f69cd71e9a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -708,6 +680,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 528479339834921395, guid: 1b9bf4c17608c3842b3e316f43bde4ff, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1955756342321732060, guid: 1b9bf4c17608c3842b3e316f43bde4ff, type: 3}
       propertyPath: cameraShake
       value: 
