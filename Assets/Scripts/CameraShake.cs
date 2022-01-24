@@ -23,7 +23,12 @@ public class CameraShake : MonoBehaviour {
 
     void Update() {
         if (Input.GetButtonDown("Jump")) {
-            StartCoroutine(Shake(0.3f, 0.2f));
+            ShakeCamera();
         }
+    }
+
+    public void ShakeCamera()
+    {
+        StartCoroutine(Shake(0.3f, 0.2f));
     }
 }

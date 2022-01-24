@@ -26,10 +26,11 @@ public class CarMovement : MonoBehaviour
     bool reverse = false;
     float tiresAngle; //(-1 to 1)
 
-    const float MAX_ANGLE = 30;
+    float MAX_ANGLE = 30;
     const float MIN_ANGLE = -30;
 
     public CarController carInterior;
+    public SteeringWheelController wheel;
 
 
     // Start is called before the first frame update
@@ -37,6 +38,7 @@ public class CarMovement : MonoBehaviour
     {
         //get components we need
         rb = GetComponentInChildren<Rigidbody2D>();
+        MAX_ANGLE =  wheel.MaxAngle;
     }
 
     // Update is called once per frame
@@ -98,7 +100,8 @@ public class CarMovement : MonoBehaviour
             NormalizeTiresAngle(30f);
         } else
         {
-            NormalizeTiresAngle(0f);
+            NormalizeTiresAngle(SteeringWheelController.Sign(wheel.transform.rotation.eulerAngles.z) * 
+                SteeringWheelController.Abs(wheel.transform.rotation.eulerAngles.z));
         }
 
     }
@@ -106,6 +109,7 @@ public class CarMovement : MonoBehaviour
 
     private void NormalizeTiresAngle(float angle)
     {
+        //Debug.Log($"Wheel angle is {angle}!");
         tiresAngle =  (angle) / (MAX_ANGLE);
         Debug.Log($"Tires angle is {tiresAngle}!");
     }

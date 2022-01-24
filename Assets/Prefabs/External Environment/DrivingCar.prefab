@@ -260,6 +260,7 @@ MonoBehaviour:
   maxSpeed: 20
   currentSpeed: 0
   carInterior: {fileID: 0}
+  wheel: {fileID: 0}
 --- !u!50 &6510054930620970290
 Rigidbody2D:
   serializedVersion: 4

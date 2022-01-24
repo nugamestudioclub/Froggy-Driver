@@ -24,7 +24,7 @@ public class SteeringWheelController : MonoBehaviour {
 		return Mathf.Rad2Deg * Mathf.Atan2(p2.y - p1.y, p2.x - p1.x);
 	}
 
-	private static float Sign(float angle) {
+	public static float Sign(float angle) {
 		return angle < (MAX_DEGREES / 2) ? 1 : -1;
 	}
 
@@ -40,7 +40,7 @@ public class SteeringWheelController : MonoBehaviour {
 		return Abs(angle) > EPSILON ? angle : 0;
 	}
 
-	private static float Abs(float angle) {
+	public static float Abs(float angle) {
 		return Sign(angle) > 0 ? angle : MAX_DEGREES - angle;
 	}
 

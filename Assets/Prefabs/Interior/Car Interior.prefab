@@ -517,6 +517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2171f94c5f8d58b48bdb919541fa591f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraShake: {fileID: 0}
 --- !u!1 &4804003533044079852
 GameObject:
   m_ObjectHideFlags: 0
@@ -920,7 +921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc71bb2f85b558547a147722bc79a7f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resetSpeed: 50
+  resetSpeed: 30
   maxAngle: 120
 --- !u!1001 &7578066222051277156
 PrefabInstance:
