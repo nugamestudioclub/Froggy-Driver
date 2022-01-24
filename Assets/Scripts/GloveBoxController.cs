@@ -24,7 +24,7 @@ public class GloveBoxController : MonoBehaviour
         sprite = GetComponentInChildren<SpriteRenderer>();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!open && collision.gameObject.TryGetComponent(out KeyController key))
         {

@@ -639,6 +639,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3641496932687155606, guid: 24b88e609aff67645baf61865df434f5, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3641496932687155606, guid: 24b88e609aff67645baf61865df434f5, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6444310986763132927, guid: 24b88e609aff67645baf61865df434f5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6563670453782557486, guid: 24b88e609aff67645baf61865df434f5, type: 3}
       propertyPath: m_Name
       value: Key
@@ -751,10 +763,6 @@ PrefabInstance:
     - target: {fileID: 4073890152665726487, guid: 1b9bf4c17608c3842b3e316f43bde4ff, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5806058237773745413, guid: 1b9bf4c17608c3842b3e316f43bde4ff, type: 3}
-      propertyPath: m_SortingOrder
-      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 6016759768251484753, guid: 1b9bf4c17608c3842b3e316f43bde4ff, type: 3}
       propertyPath: cam
