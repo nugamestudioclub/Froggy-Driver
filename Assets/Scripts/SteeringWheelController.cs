@@ -13,7 +13,6 @@ public class SteeringWheelController : MonoBehaviour {
 	[SerializeField]
 	[Range(0, MAX_DEGREES / 2)]
 	private float maxAngle = 90.0f;
-
 	public float MaxAngle => maxAngle;
 
 	private bool isOver = false;
