@@ -478,9 +478,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1207649255181629317, guid: 9b19ead7130ec924196215f69cd71e9a, type: 3}
+      propertyPath: maxSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1207649255181629317, guid: 9b19ead7130ec924196215f69cd71e9a, type: 3}
       propertyPath: playerPos
       value: 
       objectReference: {fileID: 1721912384}
+    - target: {fileID: 1207649255181629317, guid: 9b19ead7130ec924196215f69cd71e9a, type: 3}
+      propertyPath: acceleration
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5179491549197007657, guid: 9b19ead7130ec924196215f69cd71e9a, type: 3}
       propertyPath: m_Name
       value: Chaser

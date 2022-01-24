@@ -31,8 +31,26 @@ public class ChaserController : MonoBehaviour
         {
             SceneManager.LoadScene("Trash");
         }
-   
-        transform.position = Vector2.Lerp(transform.position, playerPos.position, 1 - Mathf.Exp(-chaseSpeed * Time.deltaTime));
+        float newX;
+        float newY;
+        if (transform.position.x > playerPos.position.x)
+        {
+            newX = transform.position.x - chaseSpeed * Time.deltaTime;
+        }else
+        {
+            newX = transform.position.x + chaseSpeed * Time.deltaTime;
+        }
+
+        if (transform.position.y > playerPos.position.y)
+        {
+            newY = transform.position.y - chaseSpeed * Time.deltaTime;
+        }
+        else
+        {
+            newY = transform.position.y + chaseSpeed * Time.deltaTime;
+        }
+
+        transform.position = new Vector2(newX, newY);
         transform.rotation = Quaternion.Slerp(transform.rotation, playerPos.rotation, Time.deltaTime * 5f);
 
     }
