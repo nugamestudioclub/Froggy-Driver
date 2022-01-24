@@ -45,7 +45,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5486704155715178048}
-  m_BodyType: 2
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -220,25 +220,15 @@ CompositeCollider2D:
         Y: 230000000
       - X: 350000000
         Y: 230000000
-  - m_Collider: {fileID: 6096302119772320811}
+  - m_Collider: {fileID: 5256130445420753117}
     m_ColliderPaths:
-    - - X: 300000000
-        Y: -149830960
-      - X: -300000000
-        Y: -149830960
-      - X: -300000000
-        Y: -190169024
-      - X: 300000000
-        Y: -190169024
-  - m_Collider: {fileID: 2169698520114014152}
-    m_ColliderPaths:
-    - - X: 317500000
+    - - X: -267500000
         Y: 60000000
-      - X: 267500000
+      - X: -317500000
         Y: 60000000
-      - X: 267500000
+      - X: -317500000
         Y: -200000000
-      - X: 317500000
+      - X: -267500000
         Y: -200000000
   - m_Collider: {fileID: 6808998312992004881}
     m_ColliderPaths:
@@ -250,16 +240,26 @@ CompositeCollider2D:
         Y: -200000000
       - X: 317500000
         Y: -200000000
-  - m_Collider: {fileID: 5256130445420753117}
+  - m_Collider: {fileID: 2169698520114014152}
     m_ColliderPaths:
-    - - X: -267500000
+    - - X: 317500000
         Y: 60000000
-      - X: -317500000
+      - X: 267500000
         Y: 60000000
-      - X: -317500000
+      - X: 267500000
         Y: -200000000
-      - X: -267500000
+      - X: 317500000
         Y: -200000000
+  - m_Collider: {fileID: 6096302119772320811}
+    m_ColliderPaths:
+    - - X: 300000000
+        Y: -149830960
+      - X: -300000000
+        Y: -149830960
+      - X: -300000000
+        Y: -190169024
+      - X: 300000000
+        Y: -190169024
   m_CompositePaths:
     m_Paths:
     - - {x: 34.999973, y: 23}
