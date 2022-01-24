@@ -7,7 +7,9 @@ using UnityEngine;
 public class GrabbableController : MonoBehaviour {
 	private Renderer myRenderer;
 
-	private Rigidbody2D rb;
+	private Rigidbody2D myBody;
+
+	private Collider2D myCollider;
 
 	[SerializeField]
 	[Range(0, float.MaxValue)]
@@ -21,7 +23,7 @@ public class GrabbableController : MonoBehaviour {
 
 	[SerializeField]
 	[Range(0, float.MaxValue)]
-	private float power = 5f;
+	private float power = 100.0f;
 
 	private bool nextSave = true;
 
@@ -49,8 +51,9 @@ public class GrabbableController : MonoBehaviour {
 	}
 
 	private void Awake() {
-		rb = GetComponent<Rigidbody2D>();
 		myRenderer = GetComponent<Renderer>();
+		myBody = GetComponent<Rigidbody2D>();
+		myCollider = GetComponent<Collider2D>();
 
 	}
 
@@ -67,7 +70,7 @@ public class GrabbableController : MonoBehaviour {
 	void FixedUpdate() {
 		if( canBePushed ) {
 			canBePushed = false;
-			rb.velocity = dir * power;
+			myBody.AddForce(dir * power);
 		}
 	}
 
@@ -88,10 +91,10 @@ public class GrabbableController : MonoBehaviour {
 	}
 
 	void OnMouseDrag() {
-		var pos = Vector2.Lerp(
+		var pos = ClampToScreen(Vector2.Lerp(
 			transform.position,
 			World.Instance.InteriorCamera.ScreenToWorldPoint(Input.mousePosition),
-			moveSpeed
+			moveSpeed)
 		);
 		var delta = new Vector3(
 			pos.x - transform.position.x,
@@ -147,5 +150,27 @@ public class GrabbableController : MonoBehaviour {
 		}
 
 		World.Instance.Take(gameObject);
+	}
+
+	private Vector2 ClampToScreen(Vector2 pos) {
+		const float PADDING = 0.02f;
+		var camera = World.Instance.InteriorCamera;
+		float y = camera.orthographicSize - (myCollider.bounds.size.y / 2) - PADDING;
+		float x = (camera.orthographicSize * camera.aspect) - (myCollider.bounds.size.x / 2) - PADDING;
+		float minX = camera.transform.position.x - x;
+		float maxX = camera.transform.position.x + x;
+		float minY = camera.transform.position.y - y;
+		float maxY = camera.transform.position.y + y;
+
+		if( pos.x < minX )
+			pos.x += minX - pos.x;
+		else if( pos.x > maxX )
+			pos.x -= pos.x - maxX;
+		if( pos.y < minY )
+			pos.y += minY - pos.y;
+		else if( pos.y > maxY )
+			pos.y -= pos.y - maxY;
+
+		return pos;
 	}
 }
