@@ -17,6 +17,7 @@ public class GloveBoxController : MonoBehaviour
     GameObject cross;
 
     [SerializeField]
+    [Range(0, short.MaxValue)]
     private int openSortingOrder;
 
     private BoxCollider2D boxCollider;

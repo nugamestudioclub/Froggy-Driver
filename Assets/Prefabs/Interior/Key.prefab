@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aafa51ece8fd54548a0aed3b24e820b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldSortingOrder: 0
+  heldSortingOrder: 20
   moveSpeed: 1
   saveDelay: 0.2
   power: 100

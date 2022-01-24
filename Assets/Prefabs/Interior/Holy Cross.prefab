@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 702d46e1f7d5e7c4e9e7b5113904737d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldSortingOrder: 10
+  heldSortingOrder: 20
   moveSpeed: 1
   saveDelay: 0.2
   power: 5
@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 702d46e1f7d5e7c4e9e7b5113904737d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldSortingOrder: 10
+  heldSortingOrder: 20
   moveSpeed: 1
   saveDelay: 0.2
   power: 100
@@ -247,7 +247,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 13
   m_Sprite: {fileID: 21300000, guid: 90c94aa9cabb8994bbcca2b522eb7d59, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

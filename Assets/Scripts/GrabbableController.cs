@@ -12,8 +12,8 @@ public class GrabbableController : MonoBehaviour {
 	private Collider2D myCollider;
 
 	[SerializeField]
-	[Range(0, int.MaxValue)]
-	private int heldSortingOrder = 10;
+	[Range(0, short.MaxValue)]
+	private int heldSortingOrder = 20;
 
 	private int lastSortingOrder;
 
@@ -120,7 +120,6 @@ public class GrabbableController : MonoBehaviour {
 	}
 
 	public virtual void Spawn() {
-		myRenderer.sortingOrder = 3;
 		if( fadeOnSpawn ) {
 			StartCoroutine(FadeIn());
 		}
