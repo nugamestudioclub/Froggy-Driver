@@ -20,9 +20,9 @@ public class TrashController : MonoBehaviour
     void Start()
     {
         mouseOver = false;
-        offset += 10;
         lastPosition = transform.position;
         rb = GetComponent<Rigidbody2D>();
+        offset  += 10;
     }
 
     // Update is called once per frame
