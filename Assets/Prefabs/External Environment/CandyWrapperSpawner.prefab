@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyOnCollect: 0
-  item: {fileID: 0}
+  item: {fileID: 6563670453782557486, guid: 8ff85edba05df0448bc0b30a37cd0aa1, type: 3}
 --- !u!1 &8189879199215368302
 GameObject:
   m_ObjectHideFlags: 0

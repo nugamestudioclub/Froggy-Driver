@@ -17,6 +17,14 @@ public class ChaserPosController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector2.MoveTowards(playerPos.position, enemyPos.position, 2.5f);
+        if (enemyPos == null)
+        {
+            transform.position = new Vector2(1000, 1000);
+        }
+        else
+        {
+            transform.position = Vector2.MoveTowards(playerPos.position, enemyPos.position, 2.5f);
+        }
+        
     }
 }
