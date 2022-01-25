@@ -747,11 +747,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4844d72ccef2a20408ed6a547640e623, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPointA: {x: -25, y: 10}
-  spawnAngleA: 340
-  spawnPointB: {x: 25, y: 10}
-  spawnAngleB: 20
-  spawnSpeed: 25
+  spawnPointA: {x: -24, y: 11}
+  spawnAngleA: 240
+  spawnPointB: {x: 24, y: 11}
+  spawnAngleB: 120
+  spawnSpeed: 50
 --- !u!1 &4804003533044079852
 GameObject:
   m_ObjectHideFlags: 0

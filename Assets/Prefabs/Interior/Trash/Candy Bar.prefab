@@ -112,7 +112,7 @@ Transform:
   m_GameObject: {fileID: 6563670453782557486}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7165088038530546734}
@@ -158,7 +158,7 @@ MonoBehaviour:
   power: 100
   fadeOnSpawn: 1
   fadeTime: 0.1
-  spawnTime: 3
+  spawnTime: 0.01
 --- !u!61 &593817558409528989
 BoxCollider2D:
   m_ObjectHideFlags: 0

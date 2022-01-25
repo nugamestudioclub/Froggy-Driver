@@ -17,7 +17,7 @@ public class CabinController : MonoBehaviour {
 
 	[SerializeField]
 	[Range(0, float.MaxValue)]
-	private float spawnSpeed = 25.0f;
+	private float spawnSpeed = 30.0f;
 
 	public void Take(GameObject obj) {
 		Vector3 spawnPoint;
