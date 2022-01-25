@@ -24,10 +24,9 @@ public class ProjectileController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerPos = GameObject.FindWithTag("Player").transform;
         if (bc.OverlapPoint(playerPos.position))
         {
-            SceneManager.LoadScene("GameOver");
+            SceneManager.LoadScene("Trash");
         }
         transform.position += dir * Time.deltaTime * speed;
         if (deleteThis)
