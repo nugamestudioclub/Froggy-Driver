@@ -9,28 +9,33 @@ public class TransitionManager : MonoBehaviour
 
     public void ToGame()
     {
-        SceneManager.LoadScene("UILayout", LoadSceneMode.Single);
+        SceneManager.LoadScene("MainScene", LoadSceneMode.Single);
     }
 
     public void ToGameOver()
     {
-        SceneManager.LoadScene("Lose", LoadSceneMode.Single);
+        SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
     }
 
     public void ToWin()
     {
-        SceneManager.LoadScene("Win", LoadSceneMode.Single);
+        SceneManager.LoadScene("GameWon", LoadSceneMode.Single);
     }
 
 
     public void ToCredits()
     {
-        SceneManager.LoadScene("Credit", LoadSceneMode.Single);
+        SceneManager.LoadScene("Credits", LoadSceneMode.Single);
     }
 
     public void ToTitleScreen()
     {
         SceneManager.LoadScene("Title", LoadSceneMode.Single);
+    }
+
+    public void ToHowToPlay()
+    {
+        SceneManager.LoadScene("HowToPlay", LoadSceneMode.Single);
     }
 
     public void QuitGame()

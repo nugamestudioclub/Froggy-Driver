@@ -29,7 +29,7 @@ public class ChaserController : MonoBehaviour
         StartCoroutine(accelerate());
         if (bc.OverlapPoint(playerPos.position))
         {
-            SceneManager.LoadScene("Trash");
+            SceneManager.LoadScene("GameOver");
         }
         float newX;
         float newY;
