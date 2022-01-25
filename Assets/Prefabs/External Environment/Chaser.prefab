@@ -100,9 +100,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPos: {fileID: 0}
-  maxSpeed: 20
-  acceleration: 0.5
-  shootDelay: 10
+  maxSpeed: 10
+  acceleration: 0.2
+  shootDelay: 4
   projectile: {fileID: 7630615840450669833, guid: cbd8d3f4bba619844a2e3d36f2e13f4d, type: 3}
 --- !u!61 &789686956651606150
 BoxCollider2D:
