@@ -27,7 +27,7 @@ public class ProjectileController : MonoBehaviour
         playerPos = GameObject.FindWithTag("Player").transform;
         if (bc.OverlapPoint(playerPos.position))
         {
-            SceneManager.LoadScene("Trash");
+            SceneManager.LoadScene("GameOver");
         }
         transform.position += dir * Time.deltaTime * speed;
         if (deleteThis)
