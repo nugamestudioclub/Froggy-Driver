@@ -11,14 +11,17 @@ public class ChaserController : MonoBehaviour
     private float maxSpeed;
     [SerializeField]
     private float acceleration;
+    [SerializeField]
+    private float shootDelay;
+    [SerializeField]
+    private GameObject projectile;
 
     private float chaseSpeed;
     private BoxCollider2D bc;
-
+    private bool inShoot = false;
     // Start is called before the first frame update
     void Start()
     {
-        Random.InitState(10);
         chaseSpeed = 0;
         bc = GetComponent<BoxCollider2D>();
     }
@@ -52,7 +55,10 @@ public class ChaserController : MonoBehaviour
 
         transform.position = new Vector2(newX, newY);
         transform.rotation = Quaternion.Slerp(transform.rotation, playerPos.rotation, Time.deltaTime * 5f);
-
+        if (!inShoot)
+        {
+            StartCoroutine(shoot());
+        }
     }
 
     IEnumerator accelerate()
@@ -62,5 +68,13 @@ public class ChaserController : MonoBehaviour
             chaseSpeed += acceleration;
         }
         yield return new WaitForSeconds(1f);
+    }
+
+    IEnumerator shoot()
+    {
+        inShoot = true;
+        Instantiate(projectile, transform.position, transform.rotation);
+        yield return new WaitForSeconds(shootDelay);
+        inShoot = false;
     }
 }
