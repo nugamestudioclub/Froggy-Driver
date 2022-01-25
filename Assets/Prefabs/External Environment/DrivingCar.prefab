@@ -257,7 +257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceleration: 5
   angularAcceleration: 2
-  maxSpeed: 20
+  maxSpeed: 15
   currentSpeed: 0
   carInterior: {fileID: 0}
   wheel: {fileID: 0}
