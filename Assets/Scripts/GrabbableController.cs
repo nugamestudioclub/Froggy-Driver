@@ -33,7 +33,7 @@ public class GrabbableController : MonoBehaviour {
 
 	private bool nextSave = true;
 
-	private bool isHeld;
+	public bool IsHeld { get; private set; }
 
 	private Vector2 dir;
 
@@ -52,7 +52,7 @@ public class GrabbableController : MonoBehaviour {
 
 	private bool isDiscardable;
 	public bool IsDiscardable {
-		get => isDiscardable && !isHeld;
+		get => isDiscardable && !IsHeld;
 		protected set => isDiscardable = value;
 	}
 
@@ -134,14 +134,14 @@ public class GrabbableController : MonoBehaviour {
 	}
 
 	private void Hold() {
-		isHeld = true;
+		IsHeld = true;
 		lastSortingOrder = myRenderer.sortingOrder;
 		myRenderer.sortingOrder = heldSortingOrder;
 		World.Instance.Hand.Close();
 	}
 
 	private void LetGo() {
-		isHeld = false;
+		IsHeld = false;
 		myRenderer.sortingOrder = lastSortingOrder;
 		World.Instance.Hand.Open();
 	}

@@ -30,7 +30,8 @@ public class GloveBoxController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!open && collision.gameObject.TryGetComponent(out KeyController key))
+        if (!open && collision.gameObject.TryGetComponent(out KeyController key)
+            && key.IsHeld )
         {
             //change sprite to open
             sprite.sprite = openSprite;
