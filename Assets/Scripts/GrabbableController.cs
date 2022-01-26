@@ -44,7 +44,7 @@ public class GrabbableController : MonoBehaviour {
 
 	[SerializeField]
 	[Range(0, float.MaxValue)]
-	private float fadeTime = 0.1f;
+	private float fadeTime = 0.5f;
 
 	[SerializeField]
 	[Range(0, float.MaxValue)]
@@ -148,13 +148,14 @@ public class GrabbableController : MonoBehaviour {
 
 	private IEnumerator FadeIn() {
 		Color color = myRenderer.material.color;
+		const float FACTOR = 0.1f;
 
 		IsDiscardable = false;
 		for( int alpha = 0; alpha < 10; ++alpha ) {
-			color.a = alpha * 0.1f;
+			color.a = alpha * FACTOR;
 			myRenderer.material.color = color;
 
-			yield return new WaitForSeconds(fadeTime);
+			yield return new WaitForSeconds(fadeTime * FACTOR);
 		}
 		yield return new WaitForSeconds(spawnTime);
 		IsDiscardable = true;
@@ -162,12 +163,13 @@ public class GrabbableController : MonoBehaviour {
 
 	private IEnumerator FadeOut() {
 		Color color = myRenderer.material.color;
+		const float FACTOR = 0.1f;
 
 		for( int alpha = 10; alpha >= 0; --alpha ) {
-			color.a = alpha * 0.1f;
+			color.a = alpha * FACTOR;
 			myRenderer.material.color = color;
 
-			yield return new WaitForSeconds(fadeTime);
+			yield return new WaitForSeconds(fadeTime * FACTOR);
 		}
 
 		World.Instance.Take(gameObject);

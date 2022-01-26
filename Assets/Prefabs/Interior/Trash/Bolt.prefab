@@ -157,7 +157,7 @@ MonoBehaviour:
   saveDelay: 0.2
   power: 100
   fadeOnSpawn: 1
-  fadeTime: 0.1
+  fadeTime: 0.5
   spawnTime: 3
 --- !u!70 &2220068623833967002
 CapsuleCollider2D:

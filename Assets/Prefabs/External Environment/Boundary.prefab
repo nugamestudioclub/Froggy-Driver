@@ -71,7 +71,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 1
-  m_Offset: {x: 0, y: 30}
+  m_Offset: {x: 0, y: 100}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -82,7 +82,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 50, y: 1}
+  m_Size: {x: 201, y: 1}
   m_EdgeRadius: 0
 --- !u!61 &4151656830018266515
 BoxCollider2D:
@@ -97,7 +97,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 1
-  m_Offset: {x: -25, y: 0}
+  m_Offset: {x: -100, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -108,7 +108,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 61}
+  m_Size: {x: 1, y: 201}
   m_EdgeRadius: 0
 --- !u!61 &4151656830018266512
 BoxCollider2D:
@@ -123,7 +123,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 1
-  m_Offset: {x: 0, y: -30}
+  m_Offset: {x: 0, y: -100}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -134,7 +134,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 50, y: 1}
+  m_Size: {x: 201, y: 1}
   m_EdgeRadius: 0
 --- !u!61 &4151656830018266513
 BoxCollider2D:
@@ -149,7 +149,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 1
-  m_Offset: {x: 25, y: 0}
+  m_Offset: {x: 100, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -160,7 +160,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 61}
+  m_Size: {x: 1, y: 201}
   m_EdgeRadius: 0
 --- !u!66 &4151656830018266518
 CompositeCollider2D:
@@ -182,53 +182,53 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 4151656830018266514}
     m_ColliderPaths:
-    - - X: 5000000000
-        Y: 6099999744
-      - X: -5000000000
-        Y: 6099999744
-      - X: -5000000000
-        Y: 5900000256
-      - X: 5000000000
-        Y: 5900000256
+    - - X: 1005000000
+        Y: 1005000000
+      - X: -1005000000
+        Y: 1005000000
+      - X: -1005000000
+        Y: 995000000
+      - X: 1005000000
+        Y: 995000000
   - m_Collider: {fileID: 4151656830018266515}
     m_ColliderPaths:
-    - - X: -4899999744
-        Y: 6099999744
-      - X: -5100000256
-        Y: 6099999744
-      - X: -5100000256
-        Y: -6099999744
-      - X: -4899999744
-        Y: -6099999744
+    - - X: -995000000
+        Y: 1005000000
+      - X: -1005000000
+        Y: 1005000000
+      - X: -1005000000
+        Y: -1005000000
+      - X: -995000000
+        Y: -1005000000
   - m_Collider: {fileID: 4151656830018266512}
     m_ColliderPaths:
-    - - X: 5000000000
-        Y: -5900000256
-      - X: -5000000000
-        Y: -5900000256
-      - X: -5000000000
-        Y: -6099999744
-      - X: 5000000000
-        Y: -6099999744
+    - - X: 1005000000
+        Y: -995000000
+      - X: -1005000000
+        Y: -995000000
+      - X: -1005000000
+        Y: -1005000000
+      - X: 1005000000
+        Y: -1005000000
   - m_Collider: {fileID: 4151656830018266513}
     m_ColliderPaths:
-    - - X: 5100000256
-        Y: 6099999744
-      - X: 4899999744
-        Y: 6099999744
-      - X: 4899999744
-        Y: -6099999744
-      - X: 5100000256
-        Y: -6099999744
+    - - X: 1005000000
+        Y: 1005000000
+      - X: 995000000
+        Y: 1005000000
+      - X: 995000000
+        Y: -1005000000
+      - X: 1005000000
+        Y: -1005000000
   m_CompositePaths:
     m_Paths:
-    - - {x: 509.99997, y: -610}
-      - {x: 509.99997, y: 610}
-      - {x: -510.00003, y: 609.99994}
-      - {x: -509.99997, y: -610}
-    - - {x: 489.99997, y: -590}
-      - {x: -489.99997, y: -590}
-      - {x: -489.99994, y: 590.00006}
-      - {x: 489.99997, y: 590}
+    - - {x: 100.49997, y: -100.5}
+      - {x: 100.49997, y: 100.5}
+      - {x: -100.5, y: 100.49997}
+      - {x: -100.49997, y: -100.5}
+    - - {x: 99.5, y: -99.49997}
+      - {x: -99.5, y: -99.49997}
+      - {x: -99.49997, y: 99.5}
+      - {x: 99.5, y: 99.49997}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005

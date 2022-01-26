@@ -45,11 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f92efb76b95a5894c871a5b9284ef91d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  car: {fileID: 0}
-  cabin: {fileID: 0}
   hand: {fileID: 2215252423684760909}
   interiorCamera: {fileID: 0}
   exteriorCamera: {fileID: 0}
+  cabin: {fileID: 0}
 --- !u!114 &2215252423684760909
 MonoBehaviour:
   m_ObjectHideFlags: 0
