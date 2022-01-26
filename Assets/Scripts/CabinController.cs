@@ -22,6 +22,7 @@ public class CabinController : MonoBehaviour {
 	public void Take(GameObject obj) {
 		Vector3 spawnPoint;
 		float spawnAngle;
+		const int OFFSET = 90;
 
 		(spawnPoint, spawnAngle) = Random.Range(0, 2) switch {
 			0 => (spawnPointA, spawnAngleA),
@@ -33,8 +34,8 @@ public class CabinController : MonoBehaviour {
 
 		if( instance.TryGetComponent(out Rigidbody2D body) )
 			body.velocity = new Vector2(
-				Mathf.Cos(spawnAngle * Mathf.Deg2Rad),
-				Mathf.Sin(spawnAngle * Mathf.Deg2Rad)
+				Mathf.Cos((spawnAngle + OFFSET) * Mathf.Deg2Rad),
+				Mathf.Sin((spawnAngle + OFFSET) * Mathf.Deg2Rad)
 			).normalized * spawnSpeed;
 	}
 }

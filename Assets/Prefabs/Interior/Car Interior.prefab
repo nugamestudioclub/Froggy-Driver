@@ -748,9 +748,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPointA: {x: -24, y: 10.5}
-  spawnAngleA: 340
+  spawnAngleA: 230
   spawnPointB: {x: 24, y: 10.5}
-  spawnAngleB: 200
+  spawnAngleB: 110
   spawnSpeed: 30
 --- !u!1 &4804003533044079852
 GameObject:
