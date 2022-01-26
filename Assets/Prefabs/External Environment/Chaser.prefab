@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 5179491549197007657}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPos: {fileID: 0}
-  maxSpeed: 10
+  maxSpeed: 9
   acceleration: 0.2
   shootDelay: 4
   projectile: {fileID: 7630615840450669833, guid: cbd8d3f4bba619844a2e3d36f2e13f4d, type: 3}
