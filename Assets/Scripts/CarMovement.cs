@@ -9,7 +9,7 @@ public class CarMovement : MonoBehaviour
 
     /// <summary>
     /// Direction facing (for when direction you move in by default
-    /// andgle of wheels (how much to turn)
+    /// angle of wheels (how much to turn)
     /// speed
     /// 
     /// </summary>
@@ -44,10 +44,7 @@ public class CarMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        
 
-        
-        
         //if break not active
         if (!reverse) //add forces 
         {
@@ -92,18 +89,8 @@ public class CarMovement : MonoBehaviour
 
     private void GetCarInputs()
     {
-        if (Input.GetKey(KeyCode.D)){
-            NormalizeTiresAngle(-30f);
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            NormalizeTiresAngle(30f);
-        } else
-        {
-            NormalizeTiresAngle(SteeringWheelController.Sign(wheel.transform.rotation.eulerAngles.z) * 
-                SteeringWheelController.Abs(wheel.transform.rotation.eulerAngles.z));
-        }
-
+        NormalizeTiresAngle(SteeringWheelController.Sign(wheel.transform.rotation.eulerAngles.z) * 
+            SteeringWheelController.Abs(wheel.transform.rotation.eulerAngles.z));
     }
 
 
