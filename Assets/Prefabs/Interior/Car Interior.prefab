@@ -752,6 +752,8 @@ MonoBehaviour:
   spawnPointB: {x: 24, y: 10.5}
   spawnAngleB: 110
   spawnSpeed: 30
+  spawnAngleRandomness: 5
+  spawnSpeedRandomness: 10
 --- !u!1 &4804003533044079852
 GameObject:
   m_ObjectHideFlags: 0

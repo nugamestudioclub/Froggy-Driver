@@ -19,23 +19,36 @@ public class CabinController : MonoBehaviour {
 	[Range(0, float.MaxValue)]
 	private float spawnSpeed = 30.0f;
 
+	[SerializeField]
+	[Range(0, 10)]
+	private float spawnAngleRandomness = 0.0f;
+
+	[SerializeField]
+	[Range(0, 25)]
+	private float spawnSpeedRandomness = 0.0f;
+
 	public void Take(GameObject obj) {
-		Vector3 spawnPoint;
-		float spawnAngle;
+		Vector3 position;
+		float angle;
 		const int OFFSET = 90;
 
-		(spawnPoint, spawnAngle) = Random.Range(0, 2) switch {
+		(position, angle) = Random.Range(0, 2) switch {
 			0 => (spawnPointA, spawnAngleA),
 			_ => (spawnPointB, spawnAngleB)
 		};
-		spawnPoint.z = gameObject.transform.position.z;
+		position.z = gameObject.transform.position.z;
 
-		var instance = Instantiate(obj, spawnPoint, Quaternion.identity);
+		var instance = Instantiate(obj, position, Quaternion.identity);
 
-		if( instance.TryGetComponent(out Rigidbody2D body) )
+		if( instance.TryGetComponent(out Rigidbody2D body) ) {
+			angle += Random.Range(-spawnAngleRandomness, spawnAngleRandomness);
+
+			float speed = spawnSpeed + Random.Range(-spawnSpeedRandomness, spawnSpeedRandomness);
+			
 			body.velocity = new Vector2(
-				Mathf.Cos((spawnAngle + OFFSET) * Mathf.Deg2Rad),
-				Mathf.Sin((spawnAngle + OFFSET) * Mathf.Deg2Rad)
-			).normalized * spawnSpeed;
+				Mathf.Cos((angle + OFFSET) * Mathf.Deg2Rad),
+				Mathf.Sin((angle + OFFSET) * Mathf.Deg2Rad)
+			).normalized * speed;
+		}
 	}
 }
