@@ -62,7 +62,7 @@ public class SteeringWheelController : MonoBehaviour {
 	void Update() {
 		if( !(isOver && isHeld) ) {
 			float z = transform.rotation.eulerAngles.z;
-			float deltaZ = Sign(z) * resetSpeed * Time.fixedDeltaTime;
+			float deltaZ = Sign(z) * resetSpeed * Time.deltaTime;
 
 			z = ClampToZero(transform.rotation.eulerAngles.z - deltaZ);
 			deltaZ = z - transform.rotation.eulerAngles.z;
