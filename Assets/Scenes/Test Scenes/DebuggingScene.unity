@@ -316,6 +316,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &595118255 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 45999622070988899, guid: 50c1aa327da0577439423f9539acee0c, type: 3}
+  m_PrefabInstance: {fileID: 6510054931046807923}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &680974368 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6635483963077215552, guid: 60d5e5480f6907c409a7f1945900a72a, type: 3}
@@ -815,6 +820,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3602742843387332751, guid: 50c1aa327da0577439423f9539acee0c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6510054930620970291, guid: 50c1aa327da0577439423f9539acee0c, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -880,6 +889,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1145063041}
     m_Modifications:
+    - target: {fileID: 3803370066048189127, guid: 60d5e5480f6907c409a7f1945900a72a, type: 3}
+      propertyPath: fpCamera
+      value: 
+      objectReference: {fileID: 595118255}
     - target: {fileID: 4058920836842337547, guid: 60d5e5480f6907c409a7f1945900a72a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.9
