@@ -1352,21 +1352,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Steering Wheel
       objectReference: {fileID: 0}
-    - target: {fileID: 8014245985271129442, guid: c9aba8a873bb2c0489f645c4c4b119a8, type: 3}
-      propertyPath: m_SortingOrder
-      value: 12
-      objectReference: {fileID: 0}
     - target: {fileID: 8928887541624041046, guid: c9aba8a873bb2c0489f645c4c4b119a8, type: 3}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8928887541624041046, guid: c9aba8a873bb2c0489f645c4c4b119a8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8928887541624041046, guid: c9aba8a873bb2c0489f645c4c4b119a8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8928887541624041046, guid: c9aba8a873bb2c0489f645c4c4b119a8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1407,41 +1403,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8928887541624041046, guid: c9aba8a873bb2c0489f645c4c4b119a8, type: 3}
   m_PrefabInstance: {fileID: 7524911809297511633}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &4723146381242093020 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3019144546224879885, guid: c9aba8a873bb2c0489f645c4c4b119a8, type: 3}
-  m_PrefabInstance: {fileID: 7524911809297511633}
-  m_PrefabAsset: {fileID: 0}
---- !u!58 &1626884846
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4723146381242093020}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 8
---- !u!114 &1626884845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4723146381242093020}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc71bb2f85b558547a147722bc79a7f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resetSpeed: 30
-  maxAngle: 120
 --- !u!1001 &7578066222051277156
 PrefabInstance:
   m_ObjectHideFlags: 0
