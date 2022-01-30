@@ -578,17 +578,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4844d72ccef2a20408ed6a547640e623, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1408209385 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1626884845, guid: 1b9bf4c17608c3842b3e316f43bde4ff, type: 3}
-  m_PrefabInstance: {fileID: 4073890151819567655}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc71bb2f85b558547a147722bc79a7f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!20 &1618148016 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 6510054930506695619, guid: 50c1aa327da0577439423f9539acee0c, type: 3}
@@ -687,6 +676,17 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 477994435247063755, guid: 0cfeb9b69470dbe4d82cbdda5c7a37ec, type: 3}
   m_PrefabInstance: {fileID: 329402725368867735}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1888849207 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6498749321962618155, guid: 1b9bf4c17608c3842b3e316f43bde4ff, type: 3}
+  m_PrefabInstance: {fileID: 4073890151819567655}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc71bb2f85b558547a147722bc79a7f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &329402725368867735
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -751,6 +751,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1406280330779335303, guid: 1b9bf4c17608c3842b3e316f43bde4ff, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406280330779335303, guid: 1b9bf4c17608c3842b3e316f43bde4ff, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.7
+      objectReference: {fileID: 0}
     - target: {fileID: 1955756342321732060, guid: 1b9bf4c17608c3842b3e316f43bde4ff, type: 3}
       propertyPath: cameraShake
       value: 
@@ -815,7 +823,8 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1618148016}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7524911807692652095, guid: 1b9bf4c17608c3842b3e316f43bde4ff, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b9bf4c17608c3842b3e316f43bde4ff, type: 3}
 --- !u!1001 &4151656829192303333
 PrefabInstance:
@@ -928,7 +937,7 @@ PrefabInstance:
     - target: {fileID: 6510054930620970316, guid: 50c1aa327da0577439423f9539acee0c, type: 3}
       propertyPath: wheel
       value: 
-      objectReference: {fileID: 1408209385}
+      objectReference: {fileID: 1888849207}
     - target: {fileID: 6510054930620970316, guid: 50c1aa327da0577439423f9539acee0c, type: 3}
       propertyPath: carInterior
       value: 
