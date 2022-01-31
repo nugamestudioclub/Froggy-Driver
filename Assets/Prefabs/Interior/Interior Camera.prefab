@@ -52,7 +52,7 @@ GameObject:
   - component: {fileID: 3895868295119041023}
   - component: {fileID: 477994435247063755}
   - component: {fileID: 5430552362292601688}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Interior Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ Camera:
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 183
+    m_Bits: 128
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0

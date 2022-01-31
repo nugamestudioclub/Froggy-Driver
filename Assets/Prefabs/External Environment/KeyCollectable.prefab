@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1552717577506669749}
   - component: {fileID: 2928256367442382814}
   - component: {fileID: 6624731617546459377}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: KeyCollectable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,8 +75,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6362566693673195308}
   - component: {fileID: 4286108928142456883}
-  - component: {fileID: 1806007748526699385}
-  m_Layer: 6
+  - component: {fileID: 6284369091472376146}
+  m_Layer: 8
   m_Name: FP Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,7 +150,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1806007748526699385
+--- !u!114 &6284369091472376146
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -159,9 +159,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4193624399750937507}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43cb7538299735445a234604993838c5, type: 3}
+  m_Script: {fileID: 11500000, guid: 87f668a950d3b9a4297d3265a360feae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
 --- !u!1 &9081280115144391133
 GameObject:
   m_ObjectHideFlags: 0
