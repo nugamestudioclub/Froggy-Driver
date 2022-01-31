@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 7407747066399948768}
   - component: {fileID: 5561651034258810850}
   - component: {fileID: 2262210003940500800}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ZoomInButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}

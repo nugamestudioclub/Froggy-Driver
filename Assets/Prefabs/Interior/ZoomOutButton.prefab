@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 4414637453091270998}
   - component: {fileID: 1630478767266212180}
   - component: {fileID: 7100217233735907496}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ZoomOutButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
