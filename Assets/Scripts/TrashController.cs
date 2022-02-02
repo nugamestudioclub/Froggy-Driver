@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TrashController : MonoBehaviour
@@ -22,7 +21,7 @@ public class TrashController : MonoBehaviour
         mouseOver = false;
         lastPosition = transform.position;
         rb = GetComponent<Rigidbody2D>();
-        offset  += 10;
+        offset += 10;
     }
 
     // Update is called once per frame

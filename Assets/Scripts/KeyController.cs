@@ -1,2 +1,3 @@
-public class KeyController : GrabbableController {
+public class KeyController : GrabbableController
+{
 }

@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Unity.Collections;
 using UnityEngine;
 
@@ -38,7 +35,7 @@ public class CarMovement : MonoBehaviour
     {
         //get components we need
         rb = GetComponentInChildren<Rigidbody2D>();
-        MAX_ANGLE =  wheel.MaxAngle;
+        MAX_ANGLE = wheel.MaxAngle;
     }
 
     // Update is called once per frame
@@ -49,7 +46,8 @@ public class CarMovement : MonoBehaviour
         if (!reverse) //add forces 
         {
             rb.AddForce(rb.transform.up * acceleration);
-        } else
+        }
+        else
         {
             rb.AddForce(-rb.transform.up * acceleration);
         }
@@ -89,7 +87,7 @@ public class CarMovement : MonoBehaviour
 
     private void GetCarInputs()
     {
-        NormalizeTiresAngle(SteeringWheelController.Sign(wheel.transform.rotation.eulerAngles.z) * 
+        NormalizeTiresAngle(SteeringWheelController.Sign(wheel.transform.rotation.eulerAngles.z) *
             SteeringWheelController.Abs(wheel.transform.rotation.eulerAngles.z));
     }
 
@@ -97,10 +95,10 @@ public class CarMovement : MonoBehaviour
     private void NormalizeTiresAngle(float angle)
     {
         //Debug.Log($"Wheel angle is {angle}!");
-        tiresAngle =  (angle) / (MAX_ANGLE);
-      //  Debug.Log($"Tires angle is {tiresAngle}!");
+        tiresAngle = (angle) / (MAX_ANGLE);
+        //  Debug.Log($"Tires angle is {tiresAngle}!");
     }
- 
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

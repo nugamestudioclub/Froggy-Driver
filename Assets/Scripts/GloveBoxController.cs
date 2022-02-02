@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class GloveBoxController : MonoBehaviour
@@ -31,7 +29,7 @@ public class GloveBoxController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!open && collision.gameObject.TryGetComponent(out KeyController key)
-            && key.IsHeld )
+            && key.IsHeld)
         {
             //change sprite to open
             sprite.sprite = openSprite;
@@ -42,6 +40,6 @@ public class GloveBoxController : MonoBehaviour
             open = true;
         }
 
- 
+
     }
 }

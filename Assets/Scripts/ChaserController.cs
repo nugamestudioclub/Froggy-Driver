@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -39,7 +38,8 @@ public class ChaserController : MonoBehaviour
         if (transform.position.x > playerPos.position.x)
         {
             newX = transform.position.x - chaseSpeed * Time.deltaTime;
-        }else
+        }
+        else
         {
             newX = transform.position.x + chaseSpeed * Time.deltaTime;
         }
