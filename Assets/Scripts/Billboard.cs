@@ -1,7 +1,6 @@
 using UnityEngine;
 
 public class Billboard : MonoBehaviour {
-	[SerializeField]
 	private Camera cam;
 
 
@@ -11,6 +10,7 @@ public class Billboard : MonoBehaviour {
 	}
 
 	void Update() {
-		transform.LookAt(cam.transform);
+		if (cam != null)
+			transform.LookAt(cam.transform);
 	}
 }
