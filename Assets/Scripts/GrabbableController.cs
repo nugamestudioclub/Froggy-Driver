@@ -168,7 +168,7 @@ public class GrabbableController : MonoBehaviour
         const float FACTOR = 0.1f;
 
         IsDiscardable = false;
-        for (int alpha = 0; alpha < 10; ++alpha)
+        for (int alpha = 1; alpha <= 10; ++alpha)
         {
             color.a = alpha * FACTOR;
             myRenderer.material.color = color;
@@ -184,7 +184,7 @@ public class GrabbableController : MonoBehaviour
         Color color = myRenderer.material.color;
         const float FACTOR = 0.1f;
 
-        for (int alpha = 10; alpha >= 0; --alpha)
+        for (int alpha = 9; alpha >= 0; --alpha)
         {
             color.a = alpha * FACTOR;
             myRenderer.material.color = color;
